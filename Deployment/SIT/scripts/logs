@@ -1,0 +1,17 @@
+#!/bin/bash
+# ########################################################################
+#  Author: Honda Bhyat  
+#  Company: Prolifics
+#  Purpose: Single command to display docker-compose demaon logs  
+# ########################################################################
+# This prevents running the script if any of the variables have not been set
+set -o nounset
+# This automatically exits the script if any error occurs while running it
+set -o errexit
+echo "**********************************************************************"
+echo "* Lets bring things up. First the Containers and then MFT Agent      *"
+echo "**********************************************************************"
+cd /app/ITX_Launcher/$1
+export ITX_ENV=$1
+docker-compose logs
+cd /app/ITX_Launcher

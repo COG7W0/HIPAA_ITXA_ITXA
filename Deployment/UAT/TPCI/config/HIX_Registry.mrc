@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceCfg><EventServer/><CommandServer><ResourceFile ActiveVirtualServer="Dev">../bin/CNO_Registry.mrn</ResourceFile></CommandServer><Global><ResourceFile ActiveVirtualServer="TPCI">HIX_Registry.mrn</ResourceFile></Global></ResourceCfg>

@@ -1,0 +1,155 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="transaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="action">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:dateTime" name="time"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="agent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="systemInfo">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="architecture"/>
+                      <xs:attribute type="xs:string" name="name"/>
+                      <xs:attribute type="xs:float" name="version"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="agent"/>
+            <xs:attribute type="xs:string" name="QMgr"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="originator">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="hostName"/>
+              <xs:element type="xs:string" name="userID"/>
+              <xs:element type="xs:string" name="mqmdUserID"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="status">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:int" name="resultCode"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="transferSet">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="metaDataSet">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="metaData" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="key" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="call">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="command">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="property">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="name"/>
+                                  <xs:attribute type="xs:string" name="value"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="name"/>
+                        <xs:attribute type="xs:string" name="type"/>
+                        <xs:attribute type="xs:int" name="successRC"/>
+                        <xs:attribute type="xs:int" name="retryCount"/>
+                        <xs:attribute type="xs:int" name="retryWait"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="callResult">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="result">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="stdout">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="line" maxOccurs="unbounded" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="stderr">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="line" maxOccurs="unbounded" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="outcome"/>
+                              <xs:attribute type="xs:int" name="returnCode"/>
+                              <xs:attribute type="xs:dateTime" name="time"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="outcome"/>
+                        <xs:attribute type="xs:int" name="retries"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:dateTime" name="startTime"/>
+            <xs:attribute type="xs:int" name="total"/>
+            <xs:attribute type="xs:int" name="bytesSent"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="job">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="name"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="statistics">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:int" name="retryCount"/>
+              <xs:element type="xs:int" name="numFileFailures"/>
+              <xs:element type="xs:int" name="numFileWarnings"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:float" name="version"/>
+      <xs:attribute type="xs:string" name="ID"/>
+      <xs:attribute type="xs:string" name="agentRole"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="SPEEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="EventDateTime" type="xs:dateTime"/>
+        <xs:element name="EventDateTimeString" type="xs:string"/>
+        <xs:element name="ServerName" type="xs:string"/>
+        <xs:element name="DriverTrackingID" type="xs:string"/>
+        <xs:element name="DriverTrackingType" type="xs:string"/>
+        <xs:element name="DriverTrackingStepID" type="xs:string"/>
+        <xs:element name="DriverTrackingStatus" type="xs:string"/>
+        <xs:element name="DriverTrackingStatusCode" type="xs:string"/>
+        <xs:element name="TrackingType" type="xs:string"/>
+        <xs:element name="Status" type="xs:string"/>
+        <xs:element name="DriverTrackingReason" type="xs:string"/>
+        <xs:element name="DriverTrackingReasonCode" type="xs:string"/>
+        <xs:element name="DriverTrackingSeverity" type="xs:string"/>
+        <xs:element name="DriverTrackingSeverityCode" type="xs:string"/>
+        <xs:element name="DriverTrackingAdvancedStatus" type="xs:string"/>
+        <xs:element name="ParentProcessID" type="xs:string"/>
+        <xs:element name="FlowNode" type="xs:string"/>
+        <xs:element name="EventType" type="xs:string"/>
+        <xs:element name="ProcessStatus" type="xs:string"/>
+        <xs:element name="PayloadType" type="xs:string"/>
+        <xs:element name="Payload">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Report">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Summary">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Input">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="NumberOfClaims" type="xs:int"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Processed">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="NumberOfClaims" type="xs:int"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Status" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Details">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Input">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Information">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="NumberOfClaims" type="xs:int"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Processed">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ComplianceFailures">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="NumberOfClaims" type="xs:int"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="CCNDuplicateClaims">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="NumberOfClaims" type="xs:int"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="PreEditRejectedClaims">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="NumberOfClaims" type="xs:int"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="PaperClaims">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="NumberOfClaims" type="xs:int"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="RACClaims">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="NumberOfClaims" type="xs:int"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+								<xs:element name="TransformedClaims">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="NumberOfClaims" type="xs:int"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Action">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Repair" type="xs:string"/>
+              <xs:element name="Resubmit" type="xs:string"/>
+              <xs:element name="Cancel" type="xs:string"/>
+              <xs:element name="Payload" type="xs:string"/>
+              <xs:element name="QueueName" type="xs:string"/>
+              <xs:element name="MFTTransactionID" type="xs:string"/>
+              <xs:element name="PayloadID" type="xs:string"/>
+              <xs:element name="Supplemental_Short" type="xs:string"/>
+              <xs:element name="Supplemental" type="xs:string"/>
+              <xs:element name="ACKSent" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SPEEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="EventDateTime" type="xs:dateTime" />
+        <xs:element name="EventDateTimeString" type="xs:string" />
+        <xs:element name="ServerName" type="xs:string" />
+        <xs:element name="DriverTrackingID" type="xs:string" />
+        <xs:element name="DriverTrackingType" type="xs:string" />
+        <xs:element name="DriverTrackingStepID" type="xs:string" />
+        <xs:element name="DriverTrackingStatus" type="xs:string" />
+        <xs:element name="DriverTrackingStatusCode" type="xs:string" />
+        <xs:element name="TrackingType" type="xs:string" />
+        <xs:element name="Status" type="xs:string" />
+        <xs:element name="DriverTrackingReason" type="xs:string" />
+        <xs:element name="DriverTrackingReasonCode" type="xs:string" />
+        <xs:element name="DriverTrackingSeverity" type="xs:string" />
+        <xs:element name="DriverTrackingSeverityCode" type="xs:string" />
+        <xs:element name="DriverTrackingAdvancedStatus" type="xs:string" />
+        <xs:element name="ParentProcessID" type="xs:string" />
+        <xs:element name="FlowNode" type="xs:string" />
+        <xs:element name="EventType" type="xs:string" />
+        <xs:element name="NotificationGroupCode" type="xs:string" />
+        <xs:element name="NotificationGroupType" type="xs:string" />
+        <xs:element name="ProcessStatus" type="xs:string" />
+        <xs:element name="PayloadType" type="xs:string" />
+        <xs:element name="Payload">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Report">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Summary" maxOccurs="1" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Input" maxOccurs="1" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Claims" type="xs:int" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Processed" maxOccurs="1" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Claims" type="xs:int" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="IDFFileDetails" maxOccurs="1" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="FileName" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="BLC" maxOccurs="1" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Claims" type="xs:int" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="WNIC" maxOccurs="1" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Claims" type="xs:int" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Status" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Details" maxOccurs="1" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Input" maxOccurs="1" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Information">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Claims" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Processed" maxOccurs="1" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ComplianceFailures" maxOccurs="1" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Claims" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Filtered" maxOccurs="1" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Claims" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="SentToBICPS" maxOccurs="1" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Claims" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="IDFFileDetails" maxOccurs="1" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="FileName" type="xs:string" maxOccurs="1" minOccurs="0"/>
+								<xs:element name="ProcessDate" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                <xs:element name="IDFFileDate" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="BLC" maxOccurs="1" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Information" >
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Company" type="xs:string" />
+                                      <xs:element name="Method" type="xs:string" />
+                                      <xs:element name="Status" type="xs:string" />
+                                      <xs:element name="Claims" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="CompanyTotal" maxOccurs="1" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Company" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Method" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Status" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Claims" type="xs:int" maxOccurs="1" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Total" maxOccurs="1" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Company" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Method" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Status" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Claims" type="xs:int" maxOccurs="1" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="WNIC" maxOccurs="1" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Information" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Company" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Method" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Status" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Claims" type="xs:int" maxOccurs="1" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="CompanyTotal" maxOccurs="1" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Company" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Method" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Status" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Claims" type="xs:int" maxOccurs="1" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Total" maxOccurs="1" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Company" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Method" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Status" type="xs:string" maxOccurs="1" minOccurs="0"/>
+                                      <xs:element name="Claims" type="xs:int" maxOccurs="1" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Action">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Repair" type="xs:string" />
+              <xs:element name="Resubmit" type="xs:string" />
+              <xs:element name="Cancel" type="xs:string" />
+              <xs:element name="Payload" type="xs:string" />
+              <xs:element name="QueueName" type="xs:string" />
+              <xs:element name="MFTTransactionID" type="xs:string" />
+              <xs:element name="PayloadID" type="xs:string" />
+              <xs:element name="Supplemental_Short" type="xs:string" />
+              <xs:element name="Supplemental" type="xs:string" />
+              <xs:element name="ACKSent" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

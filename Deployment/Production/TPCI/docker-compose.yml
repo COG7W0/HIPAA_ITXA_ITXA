@@ -1,0 +1,50 @@
+version: "3"
+# docker-compose for CNO ITX Launcher  
+# 
+# The following Services will start up inside of Docker for Desktop
+# Ensure you create : docker network create prod_itx
+# 
+# 1. ITXA:       prod_itx  
+services:
+    tpci:
+        hostname: tpci
+        image: "itxa_1011"
+#        privileged: true
+#        cap_drop: ['ALL']
+        environment:
+            - "LAUNCHERNAME=tpci"
+        ports:
+            - "5021:5015"
+            - "5022:5016"
+        volumes:
+            - /app/ITX_Launcher/$ITX_ENV/start_launcher.sh:/app/ITX_Launcher/$ITX_ENV/start_launcher.sh
+            - /app/ITX_Launcher/$ITX_ENV/maps:/opt/ibm/wsdtx/maps
+            - /app/ITX_Launcher/$ITX_ENV/unixODBC/etc:/opt/ibm/wsdtx/unixODBC/etc
+            - /app/ITX_Launcher/$ITX_ENV/systems:/opt/ibm/wsdtx/systems
+            - /app/ITX_Launcher/$ITX_ENV/logs:/opt/ibm/wsdtx/logs
+            - /app/ITX_Launcher/$ITX_ENV/logs:/opt/IBM/SPE10.0.1/spe_storage
+            - /app/tmp:/opt/ibm/wsdtx/tmp
+            - /app/ITX_Launcher/$ITX_ENV/debug:/opt/ibm/wsdtx/debug
+            - /app/ITX_Launcher/$ITX_ENV/schemas/:/opt/ibm/wsdtx/schemas/
+            - /app/ITX_Launcher/$ITX_ENV/queries/:/opt/ibm/wsdtx/queries/
+            - /app/ITX_Launcher/$ITX_ENV/data/:/opt/ibm/wsdtx/data/
+            - /app/ITX_Launcher/$ITX_ENV/reports/:/opt/ibm/wsdtx/reports/
+            - /app/ITX_Launcher/$ITX_ENV/config/HIX_Registry.mrc:/opt/ibm/wsdtx/config/HIX_Registry.mrc
+            - /app/ITX_Launcher/$ITX_ENV/config/HIX_Registry.mrn:/opt/ibm/wsdtx/config/HIX_Registry.mrn
+            - /app/ITX_Launcher/$ITX_ENV/config/3PCI.mdq:/opt/ibm/wsdtx/config/3PCI.mdq
+            - /app/ITX_Launcher/$ITX_ENV/jars/mssql-jdbc-7.2.0.jre8.jar:/opt/ibm/wsdtx/jars/com.hcl.hip.adapters.m4jdbc/mssql-jdbc-7.2.0.jre8.jar
+            - /app/ITX_Launcher/$ITX_ENV/jars/mssql-jdbc-10.2.0.jre8.jar:/opt/ibm/wsdtx/jars/com.hcl.hip.adapters.m4jdbc/mssql-jdbc-10.2.0.jre8.jar
+            - /app/ITX_Launcher/config/log4j2.xml:/opt/ibm/wsdtx/config/log4j2.xml
+            - /app/ITX_Launcher/config/dtx.ini:/opt/ibm/wsdtx/config/dtx.ini
+            - /app/ITX_Launcher/config/customer_overrides.properties:/opt/IBM/SPE10.0.1/customer_overrides.properties
+            - /app/ITX_Launcher/config/dbprops.cfg:/opt/IBM/SPE10.0.1/dbprops.cfg
+            - /app/ITX_Launcher/config/TimeZoneUtil.jar:/opt/ibm/wsdtx/config/TimeZoneUtil.jar
+            - /app/ITX_Launcher/gtm_spe.properties:/opt/ibm/wsdtx/config/gtm_spe.properties
+        working_dir: /opt/ibm/wsdtx
+        entrypoint:
+            - /app/ITX_Launcher/$ITX_ENV/start_launcher.sh
+        restart: unless-stopped
+networks: 
+  default: 
+    external: 
+      name: prod_itx

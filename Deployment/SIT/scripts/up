@@ -1,0 +1,58 @@
+#!/bin/bash
+# ########################################################################
+#  Author: Honda Bhyat
+#  Company: Prolifics
+#  Purpose: Single command to start docker-compose demaon
+# ########################################################################
+# This prevents running the script if any of the variables have not been set
+set -o nounset
+echo " Check if TPUI is up, if not start it"
+if ! nc  -z LXITXAPPT01 9080 </dev/null;
+ then
+     spetpuistart.sh
+fi
+echo " Make sure TPUI is up"
+while ! nc -z LXITXAPPT01 9080 </dev/null; do sleep 30; done
+echo " TPUI  looks like its up, continue"
+
+echo " Check if Derby is up, if not start it"
+if ! nc  -z LXITXAPPT01 1527 </dev/null;
+ then
+     spederbystart.sh
+fi
+echo " Make sure Derby is up"
+while ! nc -z LXITXAPPT01 1527 </dev/null; do sleep 10; done
+echo " Derby looks like its up, continue"
+echo " Make sure MQ is up"
+echo "Check to see if MFTQM on LXITXAMQAT01 Port 1414 is up"
+while ! nc -z LXITXAMQAT01 1414 </dev/null; do sleep 10; done
+echo "MFTQM looks like its up, continue"
+echo "Check to see if GTMQM on LXITXAMQAT01 Port 1415 is up"
+while ! nc -z LXITXAMQAT01 1415 </dev/null; do sleep 10; done
+echo "GTMQM looks like its up, continue"
+echo "Check to see if ITXAQM on LXITXAMQAT01 Port 1416 is up"
+while ! nc -z LXITXAMQAT01 1416 </dev/null; do sleep 10; done
+echo "ITXAQM looks like its up, continue"
+echo "Check to see if TPCIQM on LXITXAMQAT01 Port 1417 is up"
+while ! nc -z LXITXAMQAT01 1417 </dev/null; do sleep 10; done
+echo "TPCIQM looks like its up, continue"
+# This automatically exits the script if any error occurs while running it
+rm LauncherAdmin.bin
+rm -f /app/ITX_Launcher/$1/logs/*
+#rm -f /app/ITX_Launcher/$1/debug/*
+set -o errexit
+echo "**********************************************************************"
+echo "* Lets bring things up.                                              *"
+echo "**********************************************************************"
+cd /app/ITX_Launcher/$1
+#rm LauncherAdmin.bin
+touch LauncherAdmin.bin
+
+export ITX_ENV=$1
+#rm -f /app/ITX_Launcher/$1/logs/*
+#source .profile
+docker-compose  up -d
+sleep 5
+docker-compose  logs
+cd /app/ITX_Launcher
+

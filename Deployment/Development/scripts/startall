@@ -1,0 +1,6 @@
+echo "About to start all the Launchers"
+up COMMON
+up CLAIMS
+up PAYMENTS
+up TPCI
+

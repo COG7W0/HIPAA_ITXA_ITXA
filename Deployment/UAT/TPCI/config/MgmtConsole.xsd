@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  IBM Confidential
+  OCO Source Material
+  (c) Copyright IBM Corp. 2011
+
+  All rights reserved. You may not use, copy, modify or transfer this
+  program or any copy, modification or portion, in whole or in part,
+  without the explicit written permission of IBM Corporation.
+ -->
+<xsd:schema
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:wtx="http://www.ibm.com/websphere/dtx/mgmtconsole/model"
+    targetNamespace="http://www.ibm.com/websphere/dtx/mgmtconsole/model">
+    
+    <xsd:complexType name="EventServer">
+    	<xsd:sequence>
+    		<xsd:element name="EventServerName" type="xsd:string"/>
+    		<xsd:element name="HostName" type="xsd:string"/>
+    		<xsd:element name="Port" type="xsd:unsignedShort"/>
+    		<xsd:element name="Delay" type="xsd:unsignedShort"/>
+    		<xsd:element name="UserName" type="xsd:string"/>
+    		<xsd:element name="Password" type="xsd:string"/>    		
+    	</xsd:sequence>
+    </xsd:complexType>
+	<xsd:complexType name="FirewallInfo">
+	   <xsd:sequence>
+	     <xsd:element name="ClientPort" type="xsd:unsignedShort" minOccurs="0" default="7777"/>
+	   </xsd:sequence>
+	   <xsd:attribute name="Enabled" type="xsd:boolean" default="false"/>
+	</xsd:complexType>
+	<xsd:complexType name="TraceInfo">
+	    <xsd:attribute name="Trace" default="0">
+	      <xsd:simpleType>
+	        <xsd:restriction base="xsd:byte">
+	          <xsd:enumeration value="0"/>
+	          <xsd:enumeration value="1"/>
+	          <xsd:enumeration value="2"/>
+	        </xsd:restriction>
+	      </xsd:simpleType>
+	    </xsd:attribute>
+		<xsd:attribute name="Append" type="xsd:boolean" default="false"/>
+	</xsd:complexType>
+    <xsd:complexType name="LauncherInfo">
+    	<xsd:sequence>
+    		<xsd:element name="EventServerName" type="xsd:string" default=""/>    		
+    		<xsd:element name="HostName" type="xsd:string" default="localhost"/>
+    		<xsd:element name="ControlPort" type="xsd:unsignedShort" default="7002"/>
+    		<xsd:element name="MonitorPort" type="xsd:unsignedShort" default="7000"/>
+    		<xsd:element name="SkipJES" type="xsd:boolean" default="false"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="MgmtConsole">
+    	<xsd:sequence>
+    		<xsd:element name="EventServers" minOccurs="0">
+	    		<xsd:complexType>
+	    			<xsd:sequence>
+	    				<xsd:element name="EventServer" type="wtx:EventServer" maxOccurs="unbounded"/>
+	    			</xsd:sequence>
+	    		</xsd:complexType>
+	    	</xsd:element>
+    		<xsd:element name="FirewallInfo" type="wtx:FirewallInfo" minOccurs="1" maxOccurs="1"/>
+    		<xsd:element name="TraceInfo" type="wtx:TraceInfo" minOccurs="1" maxOccurs="1"/>
+    		<xsd:element name="Launchers" minOccurs="0">
+	    		<xsd:complexType>
+	    			<xsd:sequence>
+	    				<xsd:element name="Launcher" type="wtx:LauncherInfo" maxOccurs="unbounded"/>
+	    			</xsd:sequence>
+	    		</xsd:complexType>
+	    	</xsd:element>
+    	</xsd:sequence>
+    	<xsd:attribute name="Version" type="xsd:string" default="1.0"/>
+    </xsd:complexType>
+    
+    <!-- MgmtConsole -->
+	<xsd:element name="MgmtConsole" type="wtx:MgmtConsole"/>
+</xsd:schema>

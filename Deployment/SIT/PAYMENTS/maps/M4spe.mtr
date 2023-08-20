@@ -1,0 +1,20 @@
+<1372-3233986304-Wed Mar 30 14:52:46 2022>:	 ACTION          | -GDOC
+<1372-3233986304-Wed Mar 30 14:52:46 2022>:	 DOCID           | payments:node1:208639b7-0e21-4df4-9f20-c434c7f8e946
+<1372-3233986304-Wed Mar 30 14:52:46 2022>:	 GETDEFERRED     | false
+<1372-3233986304-Wed Mar 30 14:52:46 2022>:	 DEFERRED        | false
+<1372-3233986304-Wed Mar 30 14:52:46 2022>:	 NOW             | false
+<1372-3233986304-Wed Mar 30 14:52:46 2022>:	 KEEP            | false
+<1372-3233986304-Wed Mar 30 14:52:46 2022>:	 ALLDOCS         | false
+<1372-3233986304-Wed Mar 30 14:52:46 2022>:	 Trace file      | M4spe.mtr
+<1372-3233986304-Wed Mar 30 14:52:46 2022>:	 Trace append    | false
+<1372-3233986304-Wed Mar 30 14:52:46 2022>:	 Trace error     | false
+<1372-3233986304-Wed Mar 30 14:52:46 2022>:	 Trace verbose   | false
+<1372-2177814912-Wed Mar 30 14:52:46 2022>:	[beginTransaction]
+<1372-2177814912-Wed Mar 30 14:52:46 2022>:	[beginTransaction] (rc = 0) OK
+<1372-2177814912-Wed Mar 30 14:52:46 2022>:	[get]
+<1372-2177814912-Wed Mar 30 14:52:46 2022>:	[get] (rc = 0) OK
+<1372-2177814912-Wed Mar 30 14:52:46 2022>:	[endTransaction]
+<1372-2177814912-Wed Mar 30 14:52:46 2022>:	|	COMMIT
+<1372-2177814912-Wed Mar 30 14:52:47 2022>:	[endTransaction] (rc = 0) OK
+<1372-2177814912-Wed Mar 30 14:52:47 2022>:	[endTransaction]
+<1372-2177814912-Wed Mar 30 14:52:47 2022>:	[endTransaction] (rc = 0) OK

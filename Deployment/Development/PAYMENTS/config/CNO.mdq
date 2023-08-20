@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MDQ>
+	<VERSION>008</VERSION>
+	<DATABASE name="ITXAEDI">
+		<TYPE>ODBC</TYPE>
+		<PLATFORM>LINUX</PLATFORM>
+		<QUALIFIEDNAMES>false</QUALIFIEDNAMES>
+		<SURROUNDCHARS></SURROUNDCHARS>
+		<EXECUTIONSOURCE>ITXAEDI</EXECUTIONSOURCE>
+		<USER>itxadb</USER>
+		<PASSWORD.encrypted>$A}3f~)zM/</PASSWORD.encrypted>
+		<QUERY name="X12_Pre_Edits">
+			<SQLStmt>SELECT 
+[pre_edit_key],
+[part],
+[cobc_dispute],
+[reporting_key],
+[reporting_text] FROM X12_Pre_Edits ORDER BY pre_edit_key, part;</SQLStmt>
+			<TABLELIST>.X12_Pre_Edits</TABLELIST>
+		</QUERY>
+		<QUERY name="x12_Film_Counter">
+			<SQLStmt>SELECT [Parameter_Value_Int] FROM [EDI_Control_Parameters] WHERE [Parameter_Name]= 'x12_Film_Counter';</SQLStmt>
+		</QUERY>
+		<QUERY name="X12_835EFT_KEY">
+			<SQLStmt>SELECT [Parameter_Name]
+      ,[Parameter_Value_Int]
+      ,[Parameter_Value_Char]
+  FROM [EDI_Control_Parameters] WHERE Parameter_Name='x12_835eft_key';</SQLStmt>
+			<TABLELIST>.EDI_Control_Parameters</TABLELIST>
+		</QUERY>
+		<QUERY name="X12_835_EFT_Balancing">
+			<SQLStmt>SELECT [eft_key]
+      ,[parent_company]
+      ,[company_id]
+      ,[business_id]
+      ,[create_date_mf]
+      ,[create_date_edi]
+      ,[create_time_edi]
+      ,[bal_exists]
+      ,[bal_file_name]
+      ,[bal_tran_count]
+      ,[bal_tran_amount]
+      ,[dat_exists]
+      ,[dat_file_name]
+      ,[orig_mf_835_tran_count]
+      ,[orig_mf_835_tran_amount]
+      ,[edi_835_tran_count]
+      ,[edi_835_tran_amount]
+      ,[edi_835_date]
+      ,[edi_835_time]
+      ,[edi_835_file_name]
+      ,[resp_835_tran_count]
+      ,[resp_835_tran_amount]
+      ,[resp_835_date]
+      ,[resp_835_time]
+      ,[response_to_mf_date]
+      ,[response_to_mf_time]
+      ,[file_balances]
+      ,[file_status]
+      ,[override_out_of_balance]
+      ,[last_edi_update_date]
+      ,[last_edi_update_time]
+      ,[override_update_id]
+      ,[override_update_date]
+      ,[override_update_time]
+      ,[resp_835_initial_date]
+      ,[resp_835_initial_time]
+      ,[resp_835_initial_filename]
+      ,[resp_835_subsequent_date]
+      ,[resp_835_subsequent_time]
+      ,[resp_835_subsequent_filename]
+      ,[hold_for_processing_err]
+      ,[edi_835_tran_count_paid]
+      ,[edi_835_tran_count_nonpaid]
+      ,[resp_835_tran_count_paid]
+      ,[resp_835_tran_count_nonpaid]
+  FROM [X12_835_EFT_Balancing] WHERE [create_date_mf]=#SystemDate# AND [file_status] ='MF Balancing';</SQLStmt>
+		</QUERY>
+		<QUERY name="X12_835_EFT_Balancing_MFResponse">
+			<SQLStmt>SELECT [eft_key]
+,[parent_company]
+,[company_id]
+,[business_id]
+,[create_date_mf]
+,[create_date_edi]
+,[file_balances]
+,[file_status]
+,[override_out_of_balance]
+,[orig_mf_835_tran_count]
+,[edi_835_noncomp_tran_count]
+,[edi_835_claim_count]
+,[edi_835_tran_count]
+,[edi_835_tran_count_paid]
+,[edi_835_tran_count_nonpaid]
+,[resp_999_tran_accepted]
+,[resp_999_tran_included]
+,[resp_999_tran_received]
+,[resp_835_tran_count]
+,[resp_835_tran_count_paid]
+,[resp_835_tran_count_nonpaid]
+,[resp_IDF_paid]
+,[resp_IDF_settled]
+,[resp_IDF_returned]
+,[resp_IDF_voided]
+,[resp_IDF_cancelled]
+,[resp_IDF_suspended]
+,[resp_IDF_partiallysettled]
+,[resp_IDF_pendingfunding]
+   FROM [X12_835_EFT_Balancing] WHERE file_status = 'Process Responses' ORDER BY eft_key;</SQLStmt>
+			<TABLELIST>.X12_835_EFT_Balancing</TABLELIST>
+		</QUERY>
+		<QUERY name="X12_835_EFT_Details_MFResponse">
+			<SQLStmt>SELECT [eft_key],[company_id],[business_id],[sent_trn02],[claim_number],[claim_paid_amount],[provider_name],[provider_npi],[patient_name_last]
+,[patient_name_first],[policy_number],[resp_prov_bank_aba_nbr],[resp_prov_chk_sav_ind],[resp_prov_bank_acct_nbr],[resp_ach_date],[resp_provider_name]
+,[resp_reject_trans_id],[resp_reject_error_code],[resp_reject_error_desc],[accept_reject] FROM [X12_835_EFT_Detail] ORDER BY eft_key, sent_st02;</SQLStmt>
+			<TABLELIST>.X12_835_EFT_Detail</TABLELIST>
+		</QUERY>
+		<QUERY name="835EFTRESP_EDI_Control_Params">
+			<SQLStmt>SELECT [Parameter_Name],[Parameter_Value_Char],[Parameter_Value_Int] FROM [EDI_Control_Parameters] WHERE [Parameter_Name] in ('x12_835eft_blc_resp_name','x12_835eft_wnic_resp_name','x12_835eft_resp_delay');</SQLStmt>
+			<TABLELIST>.EDI_Control_Parameters</TABLELIST>
+		</QUERY>
+		<QUERY name="835OB_EDI_Control_Params">
+			<SQLStmt>SELECT [Parameter_Name],[Parameter_Value_Char],[Parameter_Value_Int] FROM [EDI_Control_Parameters] WHERE [Parameter_Name] in ('x12_835_tech_contact_name','x12_835_tech_contact_email','x12_835eft_stcnt');</SQLStmt>
+			<TABLELIST>.EDI_Control_Parameters</TABLELIST>
+		</QUERY>
+	</DATABASE>
+	<DATABASE name="GTM">
+		<TYPE>ODBC</TYPE>
+		<PLATFORM>LINUX</PLATFORM>
+		<QUALIFIEDNAMES>false</QUALIFIEDNAMES>
+		<SURROUNDCHARS></SURROUNDCHARS>
+		<EXECUTIONSOURCE>GTM</EXECUTIONSOURCE>
+		<USER>gtmdb</USER>
+		<PASSWORD.encrypted>$A)}`}z)K3</PASSWORD.encrypted>
+		<QUERY name="PRMLIST">
+			<SQLStmt>SELECT [MstCompanyId]
+      ,[ListType]
+      ,[ListCode]
+      ,[ListDesc]
+      ,[ListInfo]
+  FROM [PrmList] where ListType='SPESubmitter';</SQLStmt>
+			<TABLELIST>.PrmList</TABLELIST>
+			<TYPETREE>
+				<TREE>D:\\ANKAMMA\\ITX_WORKSPACE\\CNO\\config\\PRMLIST.mtt</TREE>
+				<DATE>Wed Dec 20 05:14:48 2017</DATE>
+			</TYPETREE>
+		</QUERY>
+	</DATABASE>
+</MDQ>

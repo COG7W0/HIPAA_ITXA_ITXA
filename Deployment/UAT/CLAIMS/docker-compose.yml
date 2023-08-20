@@ -1,0 +1,49 @@
+version: "3"
+# docker-compose for CNO ITX Launcher  
+# 
+# The following Services will start up inside of Docker for Desktop
+# Ensure you create : docker network create uat_itx
+# 
+# 1. ITXA:       uat_itx     
+services:
+    claims:
+        hostname: claims
+        image: "itxa_1011"
+#        user: itxaadmin
+        privileged: true
+        cap_drop: ['ALL']
+        environment:
+            - "LAUNCHERNAME=claims"
+        ports:
+            - "5025:5015"
+            - "5026:5016"
+        volumes:
+            - /app/ITX_Launcher/$ITX_ENV/reports/:/home/itxaadmin/Reports/ComplianceReports/837/  
+            - /app/ITX_Launcher/$ITX_ENV/start_launcher.sh:/app/ITX_Launcher/$ITX_ENV/start_launcher.sh            
+            - /app/ITX_Launcher/$ITX_ENV/maps:/opt/ibm/wsdtx/maps
+            - /app/ITX_Launcher/$ITX_ENV/unixODBC/etc/:/opt/ibm/wsdtx/unixODBC/etc/
+            - /app/ITX_Launcher/$ITX_ENV/systems:/opt/ibm/wsdtx/systems
+            - /app/ITX_Launcher/$ITX_ENV/logs:/opt/ibm/wsdtx/logs
+            - /app/ITX_Launcher/$ITX_ENV/logs:/opt/IBM/SPE10.0.1/spe_storage
+            - /app/tmp:/opt/ibm/wsdtx/tmp
+            - /app/ITX_Launcher/$ITX_ENV/debug:/opt/ibm/wsdtx/debug
+            - /app/ITX_Launcher/$ITX_ENV/schemas/:/opt/ibm/wsdtx/schemas/
+            - /app/ITX_Launcher/$ITX_ENV/data/:/opt/ibm/wsdtx/data/
+            - /app/ITX_Launcher/$ITX_ENV/reports/:/opt/ibm/wsdtx/reports/
+            - /app/ITX_Launcher/config/CNO_Registry.mrc:/opt/ibm/wsdtx/config/CNO_Registry.mrc
+            - /app/ITX_Launcher/config/CNO_Registry.mrn:/opt/ibm/wsdtx/config/CNO_Registry.mrn
+            - /app/ITX_Launcher/config/CNO.mdq:/opt/ibm/wsdtx/config/CNO.mdq
+            - /app/ITX_Launcher/config/log4j2.xml:/opt/ibm/wsdtx/config/log4j2.xml
+            - /app/ITX_Launcher/config/dtx.ini:/opt/ibm/wsdtx/config/dtx.ini
+            - /app/ITX_Launcher/config/customer_overrides.properties:/opt/IBM/SPE10.0.1/customer_overrides.properties
+            - /app/ITX_Launcher/config/dbprops.cfg:/opt/IBM/SPE10.0.1/dbprops.cfg
+            - /app/ITX_Launcher/config/TimeZoneUtil.jar:/opt/ibm/wsdtx/config/TimeZoneUtil.jar
+            - /app/ITX_Launcher/config/gtm_spe.properties:/opt/ibm/wsdtx/config/gtm_spe.properties
+        working_dir: /opt/ibm/wsdtx
+        entrypoint:
+            - /app/ITX_Launcher/$ITX_ENV/start_launcher.sh
+        restart: unless-stopped
+networks: 
+  default: 
+    external: 
+      name: uat_itx

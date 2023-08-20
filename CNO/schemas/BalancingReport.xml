@@ -1,0 +1,71 @@
+  <SPEEvent>
+	<EventDateTime>1510842054056</EventDateTime>
+	<EventDateTimeString>2017-12-29T14:15:02.859-05:00</EventDateTimeString>
+	<ServerName>healthnow</ServerName>
+	<DriverTrackingID>I_NYHBEINDV_20171116092009971276</DriverTrackingID>
+	<DriverTrackingType>PROCESSING_FAILED</DriverTrackingType>
+	`<DriverTrackingStepID>healthnow:node1:3c6f33df-9464-4939-b141-5ac3b2039399</DriverTrackingStepID>
+	<DriverTrackingStatus>ERROR</DriverTrackingStatus>
+	<DriverTrackingStatusCode>1</DriverTrackingStatusCode>
+	<TrackingType>Deenvelope failed</TrackingType>
+	<Status>ERROR</Status>
+	<DriverTrackingReason>NONE</DriverTrackingReason>
+	<DriverTrackingReasonCode>-1</DriverTrackingReasonCode>
+	<DriverTrackingSeverity>ERROR</DriverTrackingSeverity>
+	<DriverTrackingSeverityCode>8</DriverTrackingSeverityCode>
+	<DriverTrackingAdvancedStatus>Resource PrimaryDocument: org.apache.openjpa.lib.jdbc.ReportingSQLException: Connection reset {prepstmnt -473615463 SELECT t0.BODY_NAME, t0.ENCODING, t0.CONTENT_SUBTYPE, t0.CONTENT_TYPE, t0.CREATE_TIME, t0.DOCUMENT_NAME, t0.PREV_DOC_ID, t0.DOCUMENT_SIZE, t0.STORAGE_ID, t0.SUBJECT FROM SPE_DOCUMENT t0 WHERE t0.DOCUMENT_ID = ?} [code=0, state=08S01]</DriverTrackingAdvancedStatus>
+	<ParentProcessID>ed4e1bd3-c430-420b-8fa1-ce8368f46318</ParentProcessID>
+	<FlowNode>FormatFailureEvent</FlowNode>
+	<EventType>Balancing Report</EventType>
+	<ProcessStatus>FAILURE</ProcessStatus>
+	<PayloadType>xml</PayloadType>
+	<Payload>
+	<Report>
+   <Summary>
+    <Input>
+     <NumberOfClaims>5</NumberOfClaims>
+    </Input>
+    <Processed>
+     <NumberOfClaims>5</NumberOfClaims>
+    </Processed>
+    <Status>Balanced</Status>
+   </Summary>
+   <Details>
+    <Input>
+     <Information>
+      <NumberOfClaims>5</NumberOfClaims>
+     </Information>
+    </Input>
+    <Processed>
+	<ComplianceFailures>
+		<NumberOfClaims>0</NumberOfClaims>
+	 </ComplianceFailures>
+     <CCNDuplicateClaims>
+		<NumberOfClaims>0</NumberOfClaims>
+	 </CCNDuplicateClaims>
+     <PreEditRejectedClaims>
+		<NumberOfClaims>0</NumberOfClaims>
+	 </PreEditRejectedClaims>
+     <PaperClaims>
+		<NumberOfClaims>0</NumberOfClaims>
+	 </PaperClaims>
+     <RACClaims>
+		<NumberOfClaims>0</NumberOfClaims>
+	 </RACClaims>
+    </Processed>
+   </Details>
+ </Report>
+ </Payload>
+	<Action>
+		<Repair>N</Repair>
+		<Resubmit>Y</Resubmit>
+		<Cancel>Y</Cancel>
+		<Payload>ITXA_START</Payload>
+		<QueueName>GTM.RESUBMIT@GTMQM</QueueName>
+		<MFTTransactionID>414d512047544d514d202020202020208a980d5a218d7404</MFTTransactionID>
+		<PayloadID>59b7e0a8-cad9-11e7-9a07-c0a801160000</PayloadID>
+		<Supplemental_Short>ITXA DeEnvelope - Failed</Supplemental_Short>
+		<Supplemental>The Enrollment 834 file failed at the ITXA Deenvelope process</Supplemental>
+		<ACKSent>RkFMU0U=</ACKSent>
+	</Action>
+</SPEEvent>

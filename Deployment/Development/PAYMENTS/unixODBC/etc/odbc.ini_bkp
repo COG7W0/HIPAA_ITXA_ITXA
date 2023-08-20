@@ -1,0 +1,15 @@
+[ITXAEDI]
+Driver=/opt/microsoft/msodbcsql17/lib64/libmsodbcsql-17.5.so.2.1
+Description=ODBC MS SQL SERVER
+Trace=NO
+Server=NTS14CLMD01.conseco.ad
+Port=1433
+Database=ITXAEDI
+
+[GTM]
+Driver=/opt/microsoft/msodbcsql17/lib64/libmsodbcsql-17.5.so.2.1 
+Description=ODBC MS SQL SERVER
+Trace=NO
+Server=NTS14CLMD01.conseco.ad
+Port=1433
+Database=GTM

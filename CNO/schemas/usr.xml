@@ -1,0 +1,61 @@
+<usr>
+<ediTotalHL22Segments>0</ediTotalHL22Segments>
+<cno_Contact1>payerediservices@changehealthcare.com</cno_Contact1>
+<cno_Contact2>edi@company1.com</cno_Contact2>
+<WMQFTEFileSize>130550</WMQFTEFileSize>
+<senderId>VAMC</senderId>
+<ediTotalTransactions>1</ediTotalTransactions>
+<WMQFTEFileIndex>0</WMQFTEFileIndex>
+<WMQFTEMqmdUser>mqm</WMQFTEMqmdUser>
+<WMQFTEFileName>D:/CNO_DEV/Inbound/EMDEON/837/BLC_91001_EMDEON_A_20171030_064222.txt</WMQFTEFileName>
+<cno_LOB>Med Supp</cno_LOB>
+<cno_Region>HQ</cno_Region>
+<WMQFTEDestinationAgent>AGENT2</WMQFTEDestinationAgent>
+<cno_Group>Washington National</cno_Group>
+<cno_OutDir>D:\CNO_DEV\Outbound\VAMC\</cno_OutDir>
+<cno_SenderNameAlias>EmdeonWNIC_A</cno_SenderNameAlias>
+<cno_InpArchive>D:\CNO_DEV\Archive\Inbound\VAMC\</cno_InpArchive>
+<ediTotalClaims>103</ediTotalClaims>
+<ediFileSize>130550</ediFileSize>
+<mqaTranId>414d51204d4654514d202020202020209c1b2c5ab8a7e325</mqaTranId>
+<cno_arcRotateGen>50</cno_arcRotateGen>
+<ediTotalGroups>1</ediTotalGroups>
+<mqaDocType>837</mqaDocType>
+<WMQFTEFileLastModified>1509979869224</WMQFTEFileLastModified>
+<cno_MapName>CNO_837A_X12_BICPS</cno_MapName>
+<cno_SenderName>Change Healthcare</cno_SenderName>
+<justFileName>BLC_91001_EMDEON_A_20171030_064222</justFileName>
+<cno_QM>MFTQM</cno_QM>
+<trackerId>I_VAMC_20171211072436108120</trackerId>
+<mqaPreMon>LOADPROP|file:///D://CNO_DEV//CNO_MFT.properties~SUBST~SUBSTTASK</mqaPreMon>
+<aPayloadURL>http://prod_gtm_2012/DEV/Archive/Inbound/VAMC/In/20171211072436108_BLC_91001_EMDEON_A_20171030_064222.txt</aPayloadURL>
+<mqaPostSrc>ARCROTATE|50|D:\CNO_DEV\Archive\Inbound\VAMC\VAMC\\In\\*~DEL|D:/CNO_DEV/Inbound/EMDEON/837/BLC_91001_EMDEON_A_20171030_064222.txt</mqaPostSrc>
+<docType>837</docType>
+<gtm_ComplianceReportTemplatePath>/apps/data/ITX/services/config/itxa_compliance_report_template</gtm_ComplianceReportTemplatePath>
+<receiverId>351965822</receiverId>
+<buildObj>OK</buildObj>
+<WMQFTETransferId>414d51204d4654514d202020202020209c1b2c5ab8a7e325</WMQFTETransferId>
+<cno_OutArchive>D:\CNO_DEV\Archive\Outbound\VAMC\</cno_OutArchive>
+<cno_GTM_ResubmitQueue>GTM.RESUBMIT@GTMQM</cno_GTM_ResubmitQueue>
+<mqaPreSrc>SUBST~COPY|D:\CNO_DEV\Archive\Inbound\VAMC\\\VAMC\\In\\20171211072436108_BLC_91001_EMDEON_A_20171030_064222.txt|D:/CNO_DEV/Inbound/EMDEON/837/BLC_91001_EMDEON_A_20171030_064222.txt</mqaPreSrc>
+<WMQFTETransferMode>text</WMQFTETransferMode>
+<ediTotalISACount>1</ediTotalISACount>
+<WMQFTESourceAgent>AGENT2</WMQFTESourceAgent>
+<mqaRouteURL>http://prod_gtm_2012/</mqaRouteURL>
+<cno_837_ServiceQ>CNO.ITXA.INBOUND.837A</cno_837_ServiceQ>
+<cno_Category>WN</cno_Category>
+<mqaJobId>I_VAMC_20171211072436108296</mqaJobId>
+<ediTotalClaimsValue>$186360.25</ediTotalClaimsValue>
+<mqaDocId>I_VAMC_20171211072436108296</mqaDocId>
+<jobName>BLC_91001_EMDEON_A_20171030_064222.txt</jobName>
+<jobName>BLC_91001_EMDEON_A_20171030_064222.txt</jobName>
+<ediRecCount>5314</ediRecCount>
+<mqaSLAClass>Med Supp</mqaSLAClass>
+<mqaDeptName>Med Supp</mqaDeptName>
+<cno_env>DEV</cno_env>
+<editotalSBRSegments>206</editotalSBRSegments>
+<ediTotalSubmitterIDs>1</ediTotalSubmitterIDs>
+<ediTotalHL23Segments>0</ediTotalHL23Segments>
+<mqaCompName>CNO_DEV</mqaCompName>
+<MFTFileName>BLC_91001_EMDEON_A_20171030_064222.txt</MFTFileName>
+</usr>

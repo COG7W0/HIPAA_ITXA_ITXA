@@ -1,0 +1,9 @@
+echo "About to recycle all the Launchers"
+down COMMON
+down CLAIMS
+down PAYMENTS
+down TPCI
+up COMMON
+up CLAIMS
+up PAYMENTS
+up TPCI

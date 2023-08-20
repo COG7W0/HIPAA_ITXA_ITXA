@@ -1,0 +1,5 @@
+echo "About to stop all the Launchers"
+down COMMON
+down CLAIMS
+down PAYMENTS
+down TPCI

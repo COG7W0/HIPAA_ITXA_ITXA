@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<!DOCTYPE Adapters SYSTEM "Adapters.dtd">
+<!--
+
+  ** Copyright (C) IBM Corporation 2006, 2020 All rights reserved.
+  **
+  ** This software is the property of IBM Corporation and its
+  ** licensors and contains their confidential trade secrets.
+  ** Use, examination, copying, transfer and disclosure to others,
+  ** in whole or in part, are prohibited except with the express
+  ** prior written consent of IBM Corporation.
+  **
+  ** It is critical that id numbers and aliases are not changed, since these may
+  ** be referred to directly by maps.  It is also critical that id numbers are
+  ** unique - the file will not load if there are duplicate id numbers.
+  **
+  ** NOTES:
+  ** 1. Adapters in comments are not "available", but they may be
+  **    uncommented when their optional features are installed.
+  **
+  ** 2. Adapters in comments may not be available now or in the future.
+  **
+  ** 3. User Adapters must have id numbers in the range 200-255.
+  **
+  ** 4. The following adapter libraries under WTX Windows 64 bit will
+  **    append a "64" to the library name without changing the 'library='
+  **    attribute in the list below: m4file, dbutil, m4mqs, m4mqsc
+
+  -->
+<Adapters>
+	<M4Adapters>
+		<M4Adapter name="File" alias="FILE" id="0" type="file" library="m4file"/>
+		<M4Adapter name="Echo" alias="BUF" id="4" type="buff"/>
+		<M4Adapter name="Database" alias="DB" id="5" type="db" library="dbutil"/>
+		<M4Adapter name="Application" alias="APP" id="6" type="app"/>
+		<M4Adapter name="Static File" alias="SFILE" id="10" type="buff"/>
+		<M4Adapter name="IBM MQ (server)" alias="MQS" id="100" type="msg" library="m4mqs"/>
+		<M4Adapter name="MSMQ" alias="MSMQ" id="101" type="msg" library="m4msmq"/>
+		<M4Adapter name="E-mail" alias="EMAIL" id="105" type="app" library="m4email"/>
+		<M4Adapter name="ServiceNow" alias="SVCNOW" id="106" type="app" class="m4base:com/hcl/hip/adapters/m4rest:p4svcnow"/>
+		<M4Adapter name="Azure Blob Storage" alias="AZBLOB" id="107" type="app" class="m4base:com/hcl/hip/adapters/m4azblob"/>
+		<M4Adapter name="FTP" alias="FTP" id="108" type="app" library="m4ftp"/>
+		<M4Adapter name="Batch File" alias="BAT" id="110" type="app" library="m4batch"/>
+		<M4Adapter name="Shell Script" alias="SHL" id="111" type="app" library="m4shell"/>
+		<M4Adapter name="OracleAQ" alias="AQ" id="112" type="msg" library="m4aq"/>
+		<M4Adapter name="Sink" alias="SINK" id="113" type="app" library="m4sink"/>
+		<M4Adapter name="IBM MQ (client)" alias="MQSC" id="115" type="msg" library="m4mqsc"/>
+		<M4Adapter name="Archive (Zip)" alias="ZIP" id="122" type="app" library="m4zip" class="com/ibm/websphere/dtx/m4jzip"/>
+		<M4Adapter name="Sterling" alias="Sterling" id="123" type="app" class="com/ibm/websphere/dtx/si/m4si"/>
+		<M4Adapter name="HTTP" alias="HTTP" id="125" type="msg" library="m4http"/>
+		<M4Adapter name="Cipher" alias="CIPHER" id="127" type="app" library="m4cipher" encoder="true"/>
+		<M4Adapter name="MongoDB" alias="MONGO" id="129" type="app" class="com/ibm/itx/dtx/m4mongo"/>		
+		<M4Adapter name="Apache Kafka" alias="KAFKA" id="131" type="msg" class="com/hcl/hip/adapters/m4kafka"/>
+		<M4Adapter name="Archive (Tar)" alias="TAR" id="132" type="app" library="m4tar"/>
+		<M4Adapter name="Azure Service Bus" alias="AZSB" id="133" type="msg" class="m4base:com/hcl/hip/adapters/m4azsb"/>
+		<M4Adapter name="COM Automation" alias="COM" id="135" type="app" library="m4com"/>
+		<M4Adapter name="OData" alias="ODATA" id="136" type="app" class="m4base:com/hcl/hip/adapters/m4odata"/>	
+		<M4Adapter name="Apache HDFS" alias="HDFS" id="137" type="app" class="com/hcl/hip/adapters/m4hdfs"/>
+		<M4Adapter name="Socket" alias="SOCKET" id="138" type="msg" library="m4sockt"/>
+		<M4Adapter name="GZIP/ZLIB" alias="GZIP" id="139" type="app" library="m4gzip"/>
+		<M4Adapter name="REST" alias="REST" id="141" type="app" class="m4base:com/hcl/hip/adapters/m4rest"/>	
+		<M4Adapter name="SFTP" alias="SFTP" id="142" type="app" class="m4base:com/hcl/hip/adapters/m4sftp"/>
+		<M4Adapter name="Java Class" alias="Java" id="143" type="app" class="com/ibm/websphere/dtx/m4java"/>
+		<M4Adapter name="JMS" alias="JMS" id="144" type="msg" class="com/ibm/websphere/dtx/m4jms"/>
+		<M4Adapter name="SOAP" alias="SOAP" id="147" type="app" class="com/ibm/websphere/dtx/m4soap"/>
+		<M4Adapter name="Azure SQL" alias="AZSQL" id="149" type="msg" class="m4base:com/hcl/hip/adapters/m4jdbc:p4azsql"/>
+		<M4Adapter name="OpenPGP" alias="OPGP" id="150" type="app" library="m4opgp" encoder="true"/>
+		<M4Adapter name="MIME" alias="MIME" id="151" type="app" class="com/ibm/websphere/dtx/m4mime"/>
+		<M4Adapter name="CICS" alias="CICS" id="153" type="app" library="m4cics"/>
+		<M4Adapter name="JNDI" alias="JNDI" id="154" type="app" class="com/ibm/websphere/dtx/m4jndi/adapter"/>
+		<M4Adapter name="SNMP" alias="SNMP" id="155" type="app" class="com/ibm/websphere/dtx/m4snmp/adapter"/>
+		<M4Adapter name="Connect:Direct" alias="CD" id="156" type="app" library="m4cd"/>
+		<M4Adapter name="JAXB" alias="JAXB" id="157" type="app" class="com/ibm/websphere/dtx/m4jaxb"/>
+		<M4Adapter name="JDBC" alias="JDBC" id="159" type="msg" class="m4base:com/hcl/hip/adapters/m4jdbc"/>
+		<!-- <M4Adapter name="JBAPI" alias="JBAPI" id="160" type="app" class="com/ibm/websphere/dtx/m4r3bapi"/> -->
+		<!-- <M4Adapter name="JALE" alias="JALE" id="161" type="app" class="com/ibm/websphere/dtx/m4r3ale"/> -->
+		<M4Adapter name="HL7 MLLP" alias="MLLP" id="162" type="app" library="m4mllp"/>
+		<M4Adapter name="Standards Processing Engine" alias="SPE" id="163" type="app" class="com/ibm/websphere/dtx/m4spe"/>	
+		<M4Adapter name="Microsoft Excel" alias="EXCEL" id="164" type="app" class="com/ibm/itx/dtx/m4excel"/>		
+		<M4Adapter name="PDF" alias="PDF" id="165" type="app" class="com/ibm/itx/dtx/m4pdf"/>
+		<M4Adapter name="WebSphere Extreme Scale" alias="WES" id="170" type="app" class="com/ibm/websphere/dtx/m4exscale"/>	
+		<M4Adapter name="Memory Link" alias="MLINK" id="171" type="app" library="m4memlnk"/>
+		<M4Adapter name="Amazon S3" alias="S3" id="172" type="app" class="m4base:com/hcl/hip/adapters/m4s3"/>
+		<M4Adapter name="IBM Control Center" alias="ICC" id="173" type="app" class="com/ibm/itx/dtx/m4icc"/>		
+		<M4Adapter name="Amazon SNS" alias="SNS" id="174" type="msg" class="m4base:com/hcl/hip/adapters/m4sns"/>
+		<M4Adapter name="Amazon SQS" alias="SQS" id="175" type="msg" class="m4base:com/hcl/hip/adapters/m4sqs"/>
+		<M4Adapter name="FASP Aspera" alias="ASFM" id="180" type="app" library="m4aspera"/>
+		<M4Adapter name="Salesforce" alias="SFORCE" id="186" type="app" class="m4base:com/hcl/hip/adapters/m4rest:p4sforce"/>
+		<M4Adapter name="Active MQ" alias="ACTIVEMQ" id="187" type="msg" class="m4base:com/hcl/hip/adapters/m4activemq"/>
+		<M4Adapter name="IBM IMS TM Resource Adapter" alias="IMSTM" id="193" type="app" class="com/ibm/ims/ico/emd/discovery/IMSTMMetadataDiscovery"/>
+		<M4Adapter name="IBM B2B Storage" alias="BSTR" id="194" type="app" class="com/ibm/itx/dtx/m4storage"/>
+
+		<!-- The following adapters are not part of the released product -->
+		<!-- <M4Adapter name="Microsoft Word" alias="WORD" id="166" type="app" class="com/ibm/websphere/dtx/m4word"/> -->
+		<!-- <M4Adapter name="B2B Advanced Communications" alias="MEIG" id="167" type="app" class="com/ibm/websphere/dtx/m4meig"/> -->
+		<!-- <M4Adapter name="CMIS" alias="CMIS" id="168" type="app" class="com/ibm/websphere/dtx/m4cmis"/> -->
+		<!-- <M4Adapter name="Drop Box" alias="DBX" id="169" type="app" class="com/ibm/itx/dropbox"/> -->
+		<!-- <M4Adapter name="Twitter" alias="TWT" id="176" type="app" class="com/ibm/itx/twitter"/> -->
+		<!-- <M4Adapter name="Redis" alias="RDS" id="177" type="app" class="com/ibm/itx/redis"/> -->
+		<!-- <M4Adapter name="MQTT" alias="MQTT" id="178" type="app" class="com/ibm/itx/mqtt"/> -->
+		<!-- <M4Adapter name="AMQP" alias="AMQP" id="179" type="app" class="com/ibm/itx/amqp"/> -->
+		<!-- <M4Adapter name="Box Connector" alias="BOX" id="181" type="app" class="com/ibm/itx/box"/> -->
+		<!-- <M4Adapter name="Microsoft CRM Cloud Connector" alias="MCRM" id="182" type="app" class="com/ibm/itx/msftcrm"/> -->
+		<!-- <M4Adapter name="Google Drive" alias="GDRV" id="183" type="app" class="com/ibm/itx/googledrive"/> -->
+		<!-- <M4Adapter name="Microsoft One Drive" alias="MODR" id="184" type="app" class="com/ibm/itx/monedrive"/> -->
+		<!-- <M4Adapter name="SoftLayer Object Storage" alias="SLOS" id="185" type="app" class="com/ibm/itx/slobject"/> -->
+		<!-- <M4Adapter name="Sales Force" alias="SFC" id="186" type="app" class="com/ibm/itx/salesforce"/> -->		
+		<!-- <M4Adapter name="Google Ad Tech" alias="GOOGLEADS" id="188" type="app" class="m4base:com/hcl/hip/adapters/m4googleads"/> -->
+
+		<!-- The following adapters are deprecated or no longer supported -->
+		<!-- <M4Adapter name="Any" alias="ANY" id="30" type="app" /> -->
+		<!-- <M4Adapter name="R/3 ALE" alias="ALE" id="102" type="msg" library="m4r3ale"/> -->    
+		<!-- <M4Adapter name="VAN" alias="VAN" id="104" type="app" library="m4aplus"/> -->
+		<!-- <M4Adapter name="TIBCO RV" alias="RV" id="109" type="msg" library="m4tibrv"/> -->    
+		<!-- <M4Adapter name="Tuxedo" alias="TUX" id="114" type="msg" library="m4tux"/> -->
+		<!-- <M4Adapter name="Tuxedo" alias="TUX" id="114" type="msg" library="m4tuxws"/> -->
+		<!-- <M4Adapter name="MessageQ (server)" alias="BMQ" id="116" type="msg" library="m4bmq"/> -->
+		<!-- <M4Adapter name="R/3 BDC" alias="BDC" id="117" type="app" library="m4r3bdc"/>  -->
+		<!-- <M4Adapter name="R/3 BAPI" alias="BAPI" id="118" type="app" library="m4r3bapi"/>  -->    
+		<!-- <M4Adapter name="Roma" alias="ROMA" id="119" type="msg" library="m4roma"/> -->	
+		<!-- <M4Adapter name="PeopleSoft Message Agent" alias="PSMA" id="120" type="app" library="m4psft"/> -->	
+		<!-- <M4Adapter name="MessageQ (client)" alias="BMQC" id="121" type="msg" library="m4bmqc"/> -->		
+		<!-- <M4Adapter name="FS Manager" alias="FSMGR" id="124" type="msg" library="m4msgr"/> -->
+		<!-- <M4Adapter name="SMIME" alias="SMIME" id="126" type="app" library="m4smime" encoder="true"/> -->
+		<!-- <M4Adapter name="LDAP" alias="LDAP" id="128" type="app" library="m4ldap"/>	-->		
+		<!-- <M4Adapter name="FHL Fastwire" alias="FHL" id="130" type="msg" library="m4fhl"/> -->	
+		<!-- <M4Adapter name="Siebel COM Business Objects" alias="SIEBELCOM" id="136" type="app"  library="m4sblcds"/> -->	
+		<!-- <M4Adapter name="TIB/RVTX" alias="RVTX" id="140" type="msg"  library="m4tibrvtx"/> -->
+		<!-- <M4Adapter name="PeopleSoft Component Interface [deprecated]" alias="PSCI" id="141" type="app" class="com/ibm/websphere/dtx/m4psftci"/> -->
+		<!-- <M4Adapter name="Base64 [deprecated]" alias="BASESF" id="142" type="app" library="m4base64" encoder="true"/> -->
+		<!-- <M4Adapter name="BW Staging BAPI" alias="BWSB" id="146" type="app" library="m4bwsb"/>  -->    
+		<!-- <M4Adapter name="JCA Gateway [deprecated]" alias="JCA" id="148" type="app" class="EJB:com/ibm/websphere/dtx/m4jca"/> -->
+		<!-- <M4Adapter name="Quoted-printable" alias="QPRINT" id="149" type="msg" library="m4qprint" encoder="true"/> -->
+		<!-- <M4Adapter name="Corba" alias="CORBA" id="152" type="app" class="com/ibm/websphere/dtx/m4corba/adapter"/> -->		
+		<!-- <M4Adapter name="Siebel Business Object Adapter [deprecated]" alias="SIEBEL" id="158" type="app" class="com/ibm/websphere/dtx/m4sbljdb/adapter"/> -->
+		<!-- <M4Adapter name="QualityStage [deprecated]" alias="QS" id="159" type="app" class="com/ibm/websphere/dtx/m4qs"/> -->
+		<!-- <M4Adapter name="WebSphere SAP QISS" alias="SAP QISS Resource Adapter" id="195" type="app" class="com/ibm/j2ca/sap/emd/discovery/SAPMetadataDiscovery"/> -->
+		<!-- <M4Adapter name="WebSphere EMail" alias="EMailJCA" id="196" type="app" class="com/ibm/j2ca/email/emd/discovery/EmailMetadataDiscovery"/> -->
+		<!-- <M4Adapter name="WebSphere Siebel"	alias="Siebel" id="197" type="app" class="com/ibm/j2ca/siebel/emd/discovery/SiebelMetadataDiscovery"/> -->
+		<!-- <M4Adapter name="WebSphere FTP" alias="FTP Resource Adapter" id="198" type="app" class="com/ibm/j2ca/ftp/emd/discovery/FTPFileMetadataDiscoveryImpl"/> -->
+		<!-- <M4Adapter name="WebSphere PeopleSoft" alias="PeopleSoft" id="199" type="app" class="com/ibm/j2ca/peoplesoft/emd/discovery/PeopleSoftMetadataDiscovery"/> -->
+	</M4Adapters>
+
+	<!--  UserAdapters must have id numbers in the range 200-255 -->
+	<UserAdapters>
+		<!-- <UserAdapter name="File Sample" alias="SAMPLE" id="201" type="file" library="filesamp" vendor="IBM"/> -->
+	</UserAdapters>
+</Adapters>

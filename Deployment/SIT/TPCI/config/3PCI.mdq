@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MDQ>
+	<VERSION>008</VERSION>
+	<DATABASE name="GTM_TPCI">
+		<TYPE>ODBC</TYPE>
+		<PLATFORM>LINUX</PLATFORM>
+		<QUALIFIEDNAMES>false</QUALIFIEDNAMES>
+		<SURROUNDCHARS></SURROUNDCHARS>
+		<EXECUTIONSOURCE>GTM_TPCI</EXECUTIONSOURCE>
+		<USER>gtmdb</USER>
+		<PASSWORD.encrypted>$A)}`}z)K3</PASSWORD.encrypted>
+		<QUERY name="PRMLIST">
+			<SQLStmt>SELECT [MstCompanyId]
+      ,[ListType]
+      ,[ListCode]
+      ,[ListDesc]
+      ,[ListInfo]
+  FROM [PrmList] where ListType='SPESubmitter';</SQLStmt>
+			<TABLELIST>.PrmList</TABLELIST>
+		</QUERY>
+		<PROCEDURE name="dbo.insert_itxLPStagingData;1">
+			<TYPETREE>
+				<TREE>D:\\ITX_V10_WORKSPACE\\CNO_3PCI\\config\\3PCI.mtt</TREE>
+				<DATE>Wed Aug 18 10:05:36 2021</DATE>
+			</TYPETREE>
+		</PROCEDURE>
+	</DATABASE>
+	<DATABASE name="LIFEPRO">
+		<TYPE>ODBC</TYPE>
+		<PLATFORM>LINUX</PLATFORM>
+		<QUALIFIEDNAMES>true</QUALIFIEDNAMES>
+		<SURROUNDCHARS></SURROUNDCHARS>
+		<DESIGNSOURCE></DESIGNSOURCE>
+		<EXECUTIONSOURCE>LIFEPRO</EXECUTIONSOURCE>
+		<USER>LP_ITXA_UAT</USER>
+		<PASSWORD.encrypted>$F&amp;&apos;RIp|~PP~)YJ</PASSWORD.encrypted>
+	</DATABASE>
+</MDQ>

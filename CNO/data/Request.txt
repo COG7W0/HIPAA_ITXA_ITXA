@@ -1,0 +1,1 @@
+{"filter":{"company":"CLIC","control.mainframeCreateDate":ISODate("2019-01-05T00:00:00.000Z")},"sort":{"company":1},"project":{"parentCompany":1,"eftkey":1,"company":1,"status":1,"control":1}}

@@ -1,0 +1,36 @@
+﻿id,preeditKey,part,cobcDispute,reportingKey,reportingText,addUserId,addDate,updateUserId,updateDate
+1,negamt_2300_clm02,A,1,parta_dispute,Negative Amount Found - Claim Tot Charge Amt,itxadb,00:00.0,NULL,NULL
+2,negamt_2300_clm02,A,0,parta_error,Negative Amount Found - Claim Tot Charge Amt,itxadb,00:00.0,NULL,NULL
+3,negamt_2320_amtd,A,0,parta_pdf,Negative Amount Found - Med Paid,itxadb,00:00.0,NULL,NULL
+4,negamt_2320_amtd,B,0,partb_pdf,Negative Amount Found - Claim Payer Paid Amt,itxadb,00:00.0,NULL,NULL
+5,negamt_2400_sv102,B,1,partb_dispute,Negative Amount Found - SVC Claim Charge Amt,itxadb,00:00.0,NULL,NULL
+6,negamt_2400_sv102,B,0,partb_error,Negative Amount Found - SVC Claim Charge Amt,itxadb,00:00.0,NULL,NULL
+7,negamt_2400_sv203,A,1,parta_dispute,Negative Amount Found - SVC Claim Charge Amt,itxadb,00:00.0,NULL,NULL
+8,negamt_2300_clm02,B,0,partb_error,Negative Amount Found - Claim Tot Charge Amt,itxadb,00:00.0,NULL,NULL
+9,negamt_2400_sv203,A,0,parta_error,Negative Amount Found - SVC Claim Charge Amt,itxadb,00:00.0,NULL,NULL
+10,negamt_2400_sv207,A,1,parta_dispute,Negative Amount Found - SVC Denied Charge Amt,itxadb,00:00.0,NULL,NULL
+11,negamt_2400_sv207,A,0,parta_error,Negative Amount Found - SVC Denied Charge Amt,itxadb,00:00.0,NULL,NULL
+12,negamt_2430_svd02,A,0,parta_pdf,Negative Amount Found - SVC Amt Paid,itxadb,00:00.0,NULL,NULL
+13,negamt_2430_svd02,B,0,partb_pdf,Negative Amount Found - SVC Paid Amt,itxadb,00:00.0,NULL,NULL
+14,validate_integers,A,0,parta_pdf,Decimal Amount Found Within Value Code,itxadb,00:00.0,NULL,NULL
+15,validate_integers,A,0,parta_error,Decimal Amount Found Within Value Code,itxadb,00:00.0,NULL,NULL
+16,med_2nd,A,0,parta_pdf,Medicare Designated As Secondary Payer,itxadb,00:00.0,NULL,NULL
+17,med_2nd,B,0,partb_pdf,Medicare Designated As Secondary Payer,itxadb,00:00.0,NULL,NULL
+18,sbr09_ma,A,0,parta_pdf,Other Insurance Indicated Other Than Medicare,itxadb,00:00.0,NULL,NULL
+19,require_2430_svd,B,0,partb_error,Missing SVC Line Adjudication Info,itxadb,00:00.0,NULL,NULL
+20,sbr09_mb,B,0,partb_pdf,Other Insurance Indicated Other Than Medicare,itxadb,00:00.0,NULL,NULL
+21,rac,A,0,parta_pdf,RAC Recovery Audit Claims,itxadb,00:00.0,NULL,NULL
+22,rac,B,0,partb_pdf,RAC Recovery Audit Claims,itxadb,00:00.0,NULL,NULL
+31,void_cancel,A,0,parta_pdf,Void/Cancel Claim,itxadb,00:00.0,NULL,NULL
+32,adhoc_misc,All,0,adhoc,Claim Dumped to Paper (ADHOC),itxadb,00:00.0,NULL,NULL
+25,unbundled_claims,A,0,parta_pdf,Unbundled Claims Dumped To Paper,itxadb,00:00.0,NULL,NULL
+26,negamt_2320_amta8,A,0,parta_pdf,Negative Amount Found - Not Cov Charges,itxadb,00:00.0,NULL,NULL
+27,negamt_2320_amta8,B,0,partb_pdf,Negative Amount Found - Claim Non Covered Amt,itxadb,00:00.0,NULL,NULL
+28,negamt_2320_mia04,A,0,parta_pdf,Negative Amount Found - Claim DRG Amt,itxadb,00:00.0,NULL,NULL
+29,require_2430_svd,B,1,partb_dispute,Missing SVC Line Adjudication Info,itxadb,00:00.0,NULL,NULL
+30,negamt_2300_clm02,B,1,partb_dispute,Negative Amount Found - Claim Tot Charge Amt,itxadb,00:00.0,NULL,NULL
+33,film_number,A,0,parta_pdf,Missing Film Number,itxadb,00:00.0,NULL,NULL
+34,film_number,B,0,partb_pdf,Missing Film Number,itxadb,00:00.0,NULL,NULL
+36,negamt_2430_cas03,B,0,partb_pdf,Negative Amount Found - CAS PR Amt,itxadb,00:00.0,NULL,NULL
+37,negamt_2430_cas03,A,0,parta_pdf,Negative Amount Found - CAS PR Amt,itxadb,00:00.0,NULL,NULL
+38,reject_isa06_gs08_all,A,0,parta_pdf,Rejection based on  ISA06 and GS08,itxadb,40:00.0,NULL,NULL

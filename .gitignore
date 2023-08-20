@@ -1,0 +1,9 @@
+# Log file
+*.log 
+
+# Map files that are generated part of compilation #
+*.mme
+*.mopt
+*.mdg
+# Backup files
+*.bak

@@ -1,0 +1,46 @@
+version: "3"
+# docker-compose for CNO ITX Launcher
+# 
+# The following Services will start up inside of Docker for Desktop Ensure you create : docker network create dev_itx
+# 
+# 1. ITXA: dev_itx
+services:
+    claims:
+        hostname: claims
+        image: "itxa_1011"
+#        privileged: true cap_drop: ['ALL']
+        environment:
+            - "LAUNCHERNAME=claims"
+        ports:
+            - "5025:5015"
+            - "5026:5016"
+        volumes:
+            - /home/$USER/ITX_Launcher/$ITX_ENV/:/home/$USER/ITX_Launcher/$ITX_ENV/
+            - /home/$USER/ITX_Launcher/$ITX_ENV/reports/:/home/itxaadmin/Reports/ComplianceReports/837/  
+            - /home/itxaadmin/gtm_spe.properties:/home/itxaadmin/gtm_spe.properties
+            - /home/$USER/ITX_Launcher/$ITX_ENV/start_launcher.sh:/home/$USER/ITX_Launcher/$ITX_ENV/start_launcher.sh
+            - /home/$USER/ITX_Launcher/$ITX_ENV/maps:/opt/ibm/wsdtx/maps
+            - /home/$USER/ITX_Launcher/$ITX_ENV/unixODBC/etc/:/opt/ibm/wsdtx/unixODBC/etc/
+            - /home/$USER/ITX_Launcher/$ITX_ENV/systems:/opt/ibm/wsdtx/systems
+            - /home/$USER/ITX_Launcher/$ITX_ENV/logs:/opt/ibm/wsdtx/logs
+            - /home/$USER/ITX_Launcher/$ITX_ENV/tmp:/opt/ibm/wsdtx/tmp
+            - /home/$USER/ITX_Launcher/$ITX_ENV/debug:/opt/ibm/wsdtx/debug
+            - /home/$USER/ITX_Launcher/$ITX_ENV/schemas/:/opt/ibm/wsdtx/schemas/
+            - /home/$USER/ITX_Launcher/$ITX_ENV/data/:/opt/ibm/wsdtx/data/
+            - /home/$USER/ITX_Launcher/$ITX_ENV/reports/:/opt/ibm/wsdtx/reports/
+            - /home/$USER/ITX_Launcher/$ITX_ENV/config/TimeZoneUtil.jar:/opt/ibm/wsdtx/config/TimeZoneUtil.jar
+            - /home/$USER/ITX_Launcher/$ITX_ENV/config/CNO_Registry.mrc:/opt/ibm/wsdtx/config/CNO_Registry.mrc
+            - /home/$USER/ITX_Launcher/$ITX_ENV/config/CNO_Registry.mrn:/opt/ibm/wsdtx/config/CNO_Registry.mrn
+            - /home/$USER/ITX_Launcher/$ITX_ENV/config/CNO.mdq:/opt/ibm/wsdtx/config/CNO.mdq
+            - /home/$USER/ITX_Launcher/$ITX_ENV/config/log4j2.xml:/opt/ibm/wsdtx/config/log4j2.xml
+            - /home/$USER/ITX_Launcher/$ITX_ENV/config/dtx.ini:/opt/ibm/wsdtx/config/dtx.ini
+            - /home/$USER/ITX_Launcher/$ITX_ENV/config/customer_overrides.properties:/opt/IBM/SPE10.0.1/customer_overrides.properties
+            - /home/$USER/ITX_Launcher/$ITX_ENV/config/dbprops.cfg:/opt/IBM/SPE10.0.1/dbprops.cfg
+        working_dir: /opt/ibm/wsdtx
+        entrypoint:
+            - /home/$USER/ITX_Launcher/$ITX_ENV/start_launcher.sh
+        restart: unless-stopped
+networks:
+  default:
+    external:
+      name: dev_itx

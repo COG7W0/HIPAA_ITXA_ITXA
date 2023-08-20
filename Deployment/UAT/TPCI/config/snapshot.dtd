@@ -1,0 +1,97 @@
+<!ENTITY % text "CDATA #REQUIRED">
+
+<!ELEMENT EventServer (Summary?, StatusInfo?, History?, Configuration?)>
+<!ATTLIST EventServer EventServerName %text;>
+<!ATTLIST EventServer HostName %text;>
+<!ATTLIST EventServer Port %text;>
+<!ATTLIST EventServer DateTimeStamp %text;>
+
+<!ELEMENT Summary EMPTY>
+
+<!ATTLIST Summary MemoryUsage %text;>
+<!ATTLIST Summary CPUUsage %text;>
+<!ATTLIST Summary SystemStatus %text;>
+<!ATTLIST Summary ActiveComponentMaps %text;>
+<!ATTLIST Summary ActiveListenersUp %text;>
+<!ATTLIST Summary ActiveListenersDown %text;>
+<!ATTLIST Summary ActiveConnections %text;>
+<!ATTLIST Summary StartTime %text;>
+<!ATTLIST Summary SuccessTime %text;>
+<!ATTLIST Summary FailureTime %text;>
+<!ATTLIST Summary UpTime %text;>
+<!ATTLIST Summary PendingInitialization %text;>
+<!ATTLIST Summary PendingInitializationMaximum %text;>
+<!ATTLIST Summary PendingResource %text;>
+<!ATTLIST Summary PendingConnection %text;>
+<!ATTLIST Summary PendingTotal %text;>
+<!ATTLIST Summary HistorySuccesses %text;>
+<!ATTLIST Summary HistoryFailures %text;>
+<!ATTLIST Summary HistoryTotal %text;>
+<!ATTLIST Summary HistoryConnectionFailures %text;>
+<!ATTLIST Summary HistoryDeadlocksDetected %text;>
+<!ATTLIST Summary HistoryFunctionFailures %text;>
+
+<!ELEMENT StatusInfo (ActiveComponents*,PendingComponents*, AdapterConnections_StatusInfo*)>
+
+<!ELEMENT ActiveComponents EMPTY>
+<!ATTLIST ActiveComponents Component %text;>
+<!ATTLIST ActiveComponents Map %text;>
+<!ATTLIST ActiveComponents System %text;>
+<!ATTLIST ActiveComponents State %text;>
+<!ATTLIST ActiveComponents Card %text;>
+<!ATTLIST ActiveComponents Resource %text;>
+
+<!ELEMENT PendingComponents EMPTY>
+<!ATTLIST PendingComponents Component %text;>
+<!ATTLIST PendingComponents Map %text;>
+<!ATTLIST PendingComponents System %text;>
+<!ATTLIST PendingComponents State %text;>
+<!ATTLIST PendingComponents Card %text;>
+<!ATTLIST PendingComponents Reason %text;>
+<!ATTLIST PendingComponents ResourceType %text;>
+<!ATTLIST PendingComponents ResourceName %text;>
+
+<!ELEMENT AdapterConnections_StatusInfo EMPTY>
+<!ATTLIST AdapterConnections_StatusInfo Adapter %text;>
+<!ATTLIST AdapterConnections_StatusInfo Open %text;>
+<!ATTLIST AdapterConnections_StatusInfo Active %text;>
+<!ATTLIST AdapterConnections_StatusInfo Idle %text;>
+<!ATTLIST AdapterConnections_StatusInfo Pending %text;>
+
+<!ELEMENT History (MapFailures*,AdapterConnections_History*,FunctionFailures*)>
+<!ELEMENT MapFailures EMPTY>
+<!ATTLIST MapFailures Component %text;>
+<!ATTLIST MapFailures Map %text;>
+<!ATTLIST MapFailures System %text;>
+<!ATTLIST MapFailures Card %text;>
+<!ATTLIST MapFailures CardError %text;>
+<!ATTLIST MapFailures MapError %text;>
+
+<!ELEMENT AdapterConnections_History EMPTY>
+<!ATTLIST AdapterConnections_History Adapter %text;>
+<!ATTLIST AdapterConnections_History Requests %text;>
+<!ATTLIST AdapterConnections_History New %text;>
+<!ATTLIST AdapterConnections_History Reused %text;>
+<!ATTLIST AdapterConnections_History Successes %text;>
+<!ATTLIST AdapterConnections_History Failures %text;>
+
+<!ELEMENT FunctionFailures EMPTY>
+<!ATTLIST FunctionFailures Component %text;>
+<!ATTLIST FunctionFailures FunctionName %text;>
+<!ATTLIST FunctionFailures Arguments %text;>
+<!ATTLIST FunctionFailures Reason %text;>
+
+<!ELEMENT Configuration (System,AdapterConnections_Configuration*)>
+<!ELEMENT System EMPTY>
+<!ATTLIST System MaximumConcurrentMaps %text;>
+<!ATTLIST System MaximumConcurrentMapsPerWatch %text;>
+<!ATTLIST System PendingInitializationHigh %text;>
+<!ATTLIST System PendingInitializationLow %text;>
+
+<!ELEMENT AdapterConnections_Configuration EMPTY>
+<!ATTLIST AdapterConnections_Configuration Adapter %text;>
+<!ATTLIST AdapterConnections_Configuration IdleTime %text;>
+<!ATTLIST AdapterConnections_Configuration KeepTime %text;>
+<!ATTLIST AdapterConnections_Configuration KeepMinimum %text;>
+<!ATTLIST AdapterConnections_Configuration AdvisoryLimit %text;>
+<!ATTLIST AdapterConnections_Configuration MandatoryLimit %text;>

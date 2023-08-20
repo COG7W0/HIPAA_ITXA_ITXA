@@ -1,0 +1,15 @@
+{
+    "_id" : "I_COBA_20220318155059052463",
+    "schema_version" : 1,
+    "company_id" : 2,
+    "action_date" : ISODate("2022-03-18T19:51:01.041Z"),
+    "name" : "WRITE TO MONGODB",
+    "status" : 11,
+    "running_time" : 6.0,
+    "originator" : {
+        "host" : "ut-gtm.cnoinc.com.",
+        "user_id" : "CNOXU7"
+    },
+    "expire_at" : ISODate("2022-06-17T03:59:59.999Z"),
+    "recon_type" : 21
+}

@@ -1,0 +1,14 @@
+{
+  "request":{
+    "filter":""
+  },
+  "response":{
+    "status":{
+      "returnCode":0,
+      "errors":"",
+      "summary":{
+        "noInserted":1
+      }
+    }
+  }
+}

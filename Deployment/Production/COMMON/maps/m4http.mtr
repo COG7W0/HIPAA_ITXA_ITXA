@@ -1,0 +1,28 @@
+04/26/22 12:28:33.031 The poll has set the max, ctrl, alt, lstn sockets as follows: 186, 186, 0, 0 (Event=afterpoll).
+04/26/22 12:28:33.031 The poll system call (rc=1, soc=186, events=4, revents=28).
+04/26/22 12:28:33.031 The return values (rdsocks=-1, wrsocks=0, ersocks=1).
+04/26/22 12:28:33.031 WSAConnectDTX: Connect refused (loc=1).
+05/02/22 08:04:27.447 The poll has set the max, ctrl, alt, lstn sockets as follows: 187, 187, 0, 0 (Event=afterpoll).
+05/02/22 08:04:27.447 The poll system call (rc=1, soc=187, events=4, revents=28).
+05/02/22 08:04:27.447 The return values (rdsocks=-1, wrsocks=0, ersocks=1).
+05/02/22 08:04:27.447 WSAConnectDTX: Connect refused (loc=1).
+05/02/22 08:04:37.466 The poll has set the max, ctrl, alt, lstn sockets as follows: 187, 187, 0, 0 (Event=afterpoll).
+05/02/22 08:04:37.466 The poll system call (rc=1, soc=187, events=4, revents=28).
+05/02/22 08:04:37.466 The return values (rdsocks=-1, wrsocks=0, ersocks=1).
+05/02/22 08:04:37.466 WSAConnectDTX: Connect refused (loc=1).
+05/02/22 08:04:53.477 The poll has set the max, ctrl, alt, lstn sockets as follows: 187, 187, 0, 0 (Event=afterpoll).
+05/02/22 08:04:53.477 The poll system call (rc=1, soc=187, events=4, revents=28).
+05/02/22 08:04:53.477 The return values (rdsocks=-1, wrsocks=0, ersocks=1).
+05/02/22 08:04:53.477 WSAConnectDTX: Connect refused (loc=1).
+05/02/22 08:05:05.500 The poll has set the max, ctrl, alt, lstn sockets as follows: 186, 186, 0, 0 (Event=afterpoll).
+05/02/22 08:05:05.500 The poll system call (rc=1, soc=186, events=4, revents=28).
+05/02/22 08:05:05.500 The return values (rdsocks=-1, wrsocks=0, ersocks=1).
+05/02/22 08:05:05.500 WSAConnectDTX: Connect refused (loc=1).
+05/02/22 08:05:15.506 The poll has set the max, ctrl, alt, lstn sockets as follows: 186, 186, 0, 0 (Event=afterpoll).
+05/02/22 08:05:15.506 The poll system call (rc=1, soc=186, events=4, revents=28).
+05/02/22 08:05:15.506 The return values (rdsocks=-1, wrsocks=0, ersocks=1).
+05/02/22 08:05:15.506 WSAConnectDTX: Connect refused (loc=1).
+05/02/22 08:05:25.522 The poll has set the max, ctrl, alt, lstn sockets as follows: 186, 186, 0, 0 (Event=afterpoll).
+05/02/22 08:05:25.522 The poll system call (rc=1, soc=186, events=4, revents=28).
+05/02/22 08:05:25.522 The return values (rdsocks=-1, wrsocks=0, ersocks=1).
+05/02/22 08:05:25.522 WSAConnectDTX: Connect refused (loc=1).

@@ -1,0 +1,12 @@
+{
+  "status":{
+    "returnCode":0,
+    "errors":[
+      "error 1",
+      "error 2"
+    ]
+  },
+  "summary":{
+    "noInserted":1
+  }
+}

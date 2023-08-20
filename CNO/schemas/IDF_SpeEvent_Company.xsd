@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SPEEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="EventDateTime" type="xs:dateTime" />
+        <xs:element name="EventDateTimeString" type="xs:string" />
+        <xs:element name="ServerName" type="xs:string" />
+        <xs:element name="DriverTrackingID" type="xs:string" />
+        <xs:element name="DriverTrackingType" type="xs:string" />
+        <xs:element name="DriverTrackingStepID" type="xs:string" />
+        <xs:element name="DriverTrackingStatus" type="xs:string" />
+        <xs:element name="DriverTrackingStatusCode" type="xs:string" />
+        <xs:element name="TrackingType" type="xs:string" />
+        <xs:element name="Status" type="xs:string" />
+        <xs:element name="DriverTrackingReason" type="xs:string" />
+        <xs:element name="DriverTrackingReasonCode" type="xs:string" />
+        <xs:element name="DriverTrackingSeverity" type="xs:string" />
+        <xs:element name="DriverTrackingSeverityCode" type="xs:string" />
+        <xs:element name="DriverTrackingAdvancedStatus" type="xs:string" />
+        <xs:element name="ParentProcessID" type="xs:string" />
+        <xs:element name="FlowNode" type="xs:string" />
+        <xs:element name="EventType" type="xs:string" />
+        <xs:element name="NotificationGroupCode" type="xs:string" />
+        <xs:element name="NotificationGroupType" type="xs:string" />
+        <xs:element name="ProcessStatus" type="xs:string" />
+        <xs:element name="PayloadType" type="xs:string" />
+        <xs:element name="Payload">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Report">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Summary">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Input">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Claims" type="xs:int" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Processed">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Claims" type="xs:int" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Companies-Method">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Claims" type="xs:int" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Companies-Status" >
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Claims" type="xs:int" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Status" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Details">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Input">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Information">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Claims" type="xs:int" />
+                                      <xs:element name="Payments" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Processed">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ComplianceFailures">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Claims" type="xs:int" />
+                                      <xs:element name="Payments" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Unknown">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Claims" type="xs:int" />
+                                      <xs:element name="Payments" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Transformed">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Claims" type="xs:int" />
+                                      <xs:element name="Payments" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Companies-Method">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="BLC">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ACH" type="xs:int" />
+                                      <xs:element name="CHK" type="xs:int" />
+                                      <xs:element name="VCARD" type="xs:int" />
+                                      <xs:element name="NON" type="xs:int" />
+                                      <xs:element name="BOP" type="xs:int" />
+									  <xs:element name="Total" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="BLCCP">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ACH" type="xs:int" />
+                                      <xs:element name="CHK" type="xs:int" />
+                                      <xs:element name="VCARD" type="xs:int" />
+                                      <xs:element name="NON" type="xs:int" />
+                                      <xs:element name="BOP" type="xs:int" />
+                                      <xs:element name="Total" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="BCLIC">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ACH" type="xs:int" />
+                                      <xs:element name="CHK" type="xs:int" />
+                                      <xs:element name="VCARD" type="xs:int" />
+                                      <xs:element name="NON" type="xs:int" />
+                                      <xs:element name="BOP" type="xs:int" />
+                                      <xs:element name="Total" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="BLCRL">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ACH" type="xs:int" />
+                                      <xs:element name="CHK" type="xs:int" />
+                                      <xs:element name="VCARD" type="xs:int" />
+                                      <xs:element name="NON" type="xs:int" />
+                                      <xs:element name="BOP" type="xs:int" />
+                                      <xs:element name="Total" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="CLIC">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ACH" type="xs:int" />
+                                      <xs:element name="CHK" type="xs:int" />
+                                      <xs:element name="VCARD" type="xs:int" />
+                                      <xs:element name="NON" type="xs:int" />
+                                      <xs:element name="BOP" type="xs:int" />
+                                      <xs:element name="Total" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="WNIC">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ACH" type="xs:int" />
+                                      <xs:element name="CHK" type="xs:int" />
+                                      <xs:element name="VCARD" type="xs:int" />
+                                      <xs:element name="NON" type="xs:int" />
+                                      <xs:element name="BOP" type="xs:int" />
+                                      <xs:element name="Total" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Total">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ACH" type="xs:int" />
+                                      <xs:element name="CHK" type="xs:int" />
+                                      <xs:element name="VCARD" type="xs:int" />
+                                      <xs:element name="NON" type="xs:int" />
+                                      <xs:element name="BOP" type="xs:int" />
+                                      <xs:element name="Total" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Companies-Status">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="BLC">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Settled" type="xs:int" />
+                                      <xs:element name="Paid" type="xs:int" />
+                                      <xs:element name="Suspended" type="xs:int" />
+                                      <xs:element name="PendingFunding" type="xs:int" />
+                                      <xs:element name="PartiallySettled" type="xs:int" />
+                                      <xs:element name="Cancelled" type="xs:int" />
+                                      <xs:element name="Returned" type="xs:int" />
+                                      <xs:element name="Voided" type="xs:int" />
+                                      <xs:element name="Stopped" type="xs:int" />
+                                      <xs:element name="Expired" type="xs:int" />
+                                      <xs:element name="ReIssued" type="xs:int" />
+                                      <xs:element name="Total" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="BLCCP">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Settled" type="xs:int" />
+                                      <xs:element name="Paid" type="xs:int" />
+                                      <xs:element name="Suspended" type="xs:int" />
+                                      <xs:element name="PendingFunding" type="xs:int" />
+                                      <xs:element name="PartiallySettled" type="xs:int" />
+                                      <xs:element name="Cancelled" type="xs:int" />
+                                      <xs:element name="Returned" type="xs:int" />
+                                      <xs:element name="Voided" type="xs:int" />
+                                      <xs:element name="Stopped" type="xs:int" />
+                                      <xs:element name="Expired" type="xs:int" />
+                                      <xs:element name="ReIssued" type="xs:int" />
+                                      <xs:element name="Total" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="BCLIC">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Settled" type="xs:int" />
+                                      <xs:element name="Paid" type="xs:int" />
+                                      <xs:element name="Suspended" type="xs:int" />
+                                      <xs:element name="PendingFunding" type="xs:int" />
+                                      <xs:element name="PartiallySettled" type="xs:int" />
+                                      <xs:element name="Cancelled" type="xs:int" />
+                                      <xs:element name="Returned" type="xs:int" />
+                                      <xs:element name="Voided" type="xs:int" />
+                                      <xs:element name="Stopped" type="xs:int" />
+                                      <xs:element name="Expired" type="xs:int" />
+                                      <xs:element name="ReIssued" type="xs:int" />
+                                      <xs:element name="Total" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="BLCRL">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Settled" type="xs:int" />
+                                      <xs:element name="Paid" type="xs:int" />
+                                      <xs:element name="Suspended" type="xs:int" />
+                                      <xs:element name="PendingFunding" type="xs:int" />
+                                      <xs:element name="PartiallySettled" type="xs:int" />
+                                      <xs:element name="Cancelled" type="xs:int" />
+                                      <xs:element name="Returned" type="xs:int" />
+                                      <xs:element name="Voided" type="xs:int" />
+                                      <xs:element name="Stopped" type="xs:int" />
+                                      <xs:element name="Expired" type="xs:int" />
+                                      <xs:element name="ReIssued" type="xs:int" />
+                                      <xs:element name="Total" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="CLIC">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Settled" type="xs:int" />
+                                      <xs:element name="Paid" type="xs:int" />
+                                      <xs:element name="Suspended" type="xs:int" />
+                                      <xs:element name="PendingFunding" type="xs:int" />
+                                      <xs:element name="PartiallySettled" type="xs:int" />
+                                      <xs:element name="Cancelled" type="xs:int" />
+                                      <xs:element name="Returned" type="xs:int" />
+                                      <xs:element name="Voided" type="xs:int" />
+                                      <xs:element name="Stopped" type="xs:int" />
+                                      <xs:element name="Expired" type="xs:int" />
+                                      <xs:element name="ReIssued" type="xs:int" />
+                                      <xs:element name="Total" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="WNIC">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Settled" type="xs:int" />
+                                      <xs:element name="Paid" type="xs:int" />
+                                      <xs:element name="Suspended" type="xs:int" />
+                                      <xs:element name="PendingFunding" type="xs:int" />
+                                      <xs:element name="PartiallySettled" type="xs:int" />
+                                      <xs:element name="Cancelled" type="xs:int" />
+                                      <xs:element name="Returned" type="xs:int" />
+                                      <xs:element name="Voided" type="xs:int" />
+                                      <xs:element name="Stopped" type="xs:int" />
+                                      <xs:element name="Expired" type="xs:int" />
+                                      <xs:element name="ReIssued" type="xs:int" />
+                                      <xs:element name="Total" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Total">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Settled" type="xs:int" />
+                                      <xs:element name="Paid" type="xs:int" />
+                                      <xs:element name="Suspended" type="xs:int" />
+                                      <xs:element name="PendingFunding" type="xs:int" />
+                                      <xs:element name="PartiallySettled" type="xs:int" />
+                                      <xs:element name="Cancelled" type="xs:int" />
+                                      <xs:element name="Returned" type="xs:int" />
+                                      <xs:element name="Voided" type="xs:int" />
+                                      <xs:element name="Stopped" type="xs:int" />
+                                      <xs:element name="Expired" type="xs:int" />
+                                      <xs:element name="ReIssued" type="xs:int" />
+                                      <xs:element name="Total" type="xs:int" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Action">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Repair" type="xs:string" />
+              <xs:element name="Resubmit" type="xs:string" />
+              <xs:element name="Cancel" type="xs:string" />
+              <xs:element name="Payload" type="xs:string" />
+              <xs:element name="QueueName" type="xs:string" />
+              <xs:element name="MFTTransactionID" type="xs:string" />
+              <xs:element name="PayloadID" type="xs:string" />
+              <xs:element name="Supplemental_Short" type="xs:string" />
+              <xs:element name="Supplemental" type="xs:string" />
+              <xs:element name="ACKSent" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

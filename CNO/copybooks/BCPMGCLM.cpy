@@ -1,0 +1,119 @@
+000100******************************************************************        
+000200* 10-10-11 - C DEBARTOLO - AR 114268 - NEW CLAIM RECORD LAYOUT   *        
+000300*            FOR HIPAA 5010 X12 CONVERSION.                      *        
+136028* 07-18-2013-CNOI-AR 136028                                               
+136028*            ADD FIELDS FOR PART-A COINS/LTR DAYS AND AMOUNTS             
+000400******************************************************************        
+000500 01  MEDG-CLM-RECORD.                                                     
+000600     05  MEDG-CLM-REC-ID           PIC X(02).                             
+000700     05  MEDG-CLM-CCN              PIC X(17).                             
+000800     05  MEDG-CLM-HICN             PIC X(12).                             
+000900     05  MEDG-CLM-POLICY           PIC X(25).                             
+001000     05  MEDG-CLM-BILLPROV-TYPE    PIC X(01).                             
+001100     05  MEDG-CLM-BILLPROV-LAST    PIC X(33).                             
+001200     05  MEDG-CLM-BILLPROV-FIRST   PIC X(12).                             
+001300     05  MEDG-CLM-BILLPROV-MID     PIC X(01).                             
+001400     05  MEDG-CLM-BILLPROV-ADDR1   PIC X(30).                             
+001500     05  MEDG-CLM-BILLPROV-ADDR2   PIC X(30).                             
+001600     05  MEDG-CLM-BILLPROV-CITY    PIC X(20).                             
+001700     05  MEDG-CLM-BILLPROV-STATE   PIC X(02).                             
+001800     05  MEDG-CLM-BILLPROV-ZIP     PIC X(09).                             
+001900     05  MEDG-CLM-BILLPROV-PHONE   PIC X(13).                             
+002000     05  MEDG-CLM-BILLPROV-NPI     PIC X(10).                             
+002100     05  MEDG-CLM-BILLPROV-TAXID   PIC X(11).                             
+002200     05  MEDG-CLM-ATTDPROV-LAST    PIC X(33).                             
+002300     05  MEDG-CLM-PAT-LAST-NAME    PIC X(20).                             
+002400     05  MEDG-CLM-PAT-FIRST-NAME   PIC X(12).                             
+002500     05  MEDG-CLM-PAT-MID-INIT     PIC X(01).                             
+002600     05  MEDG-CLM-PAT-SUFFIX       PIC X(05).                             
+002700     05  MEDG-CLM-PAT-ADDR1        PIC X(30).                             
+002800     05  MEDG-CLM-PAT-ADDR2        PIC X(30).                             
+002900     05  MEDG-CLM-PAT-CITY         PIC X(20).                             
+003000     05  MEDG-CLM-PAT-STATE        PIC X(02).                             
+003100     05  MEDG-CLM-PAT-ZIP          PIC X(09).                             
+003200     05  MEDG-CLM-PAT-SEX          PIC X(01).                             
+003300     05  MEDG-CLM-PAT-DOB          PIC X(08).                             
+003400     05  MEDG-CLM-PAT-CNTL-NO      PIC X(20).                             
+003500     05  MEDG-CLM-PAT-DECD-DATE    PIC X(08).                             
+003600     05  MEDG-CLM-PAT-STATUS       PIC X(02).                             
+003700     05  MEDG-CLM-TAXONOMY-CODE    PIC X(30).                             
+003800     05  MEDG-CLM-SUBMITTED-CHG    PIC 9(07)V99.                          
+003900     05  MEDG-CLM-PLACE-OF-SERV    PIC X(02).                             
+004000     05  MEDG-CLM-TYPE-OF-CARE     PIC X(02).                             
+004100     05  MEDG-CLM-FREQUENCY-CODE   PIC X(01).                             
+004200     05  MEDG-CLM-PROV-ASSIGN-IND  PIC X(01).                             
+004300     05  MEDG-CLM-BENE-ASSIGN-IND1 PIC X(01).                             
+004400     05  MEDG-CLM-BENE-ASSIGN-IND2 PIC X(01).                             
+004500     05  MEDG-CLM-ADJUSTMENT-IND   PIC X(01).                             
+004600     05  MEDG-CLM-REPROCESS-CCN    PIC X(30).                             
+004700     05  MEDG-CLM-MAND-4081-IND    PIC X(01).                             
+004800     05  MEDG-CLM-DIAG1            PIC X(10).                             
+004900     05  MEDG-CLM-DIAG2            PIC X(10).                             
+005000     05  MEDG-CLM-DIAG3            PIC X(10).                             
+005100     05  MEDG-CLM-DIAG4            PIC X(10).                             
+005200     05  MEDG-CLM-DIAG5            PIC X(10).                             
+005300     05  MEDG-CLM-DIAG6            PIC X(10).                             
+005400     05  MEDG-CLM-DIAG7            PIC X(10).                             
+005500     05  MEDG-CLM-DIAG8            PIC X(10).                             
+005600     05  MEDG-CLM-DIAG9            PIC X(10).                             
+005700     05  MEDG-CLM-DIAG10           PIC X(10).                             
+005800     05  MEDG-CLM-DIAG11           PIC X(10).                             
+005900     05  MEDG-CLM-DIAG12           PIC X(10).                             
+006000     05  MEDG-CLM-DIAG13           PIC X(10).                             
+006100     05  MEDG-CLM-ADMIT-DIAG       PIC X(10).                             
+005800     05  MEDG-CLM-A1-SW            PIC X(01).                             
+005900     05  MEDG-CLM-A2-SW            PIC X(01).                             
+006000     05  MEDG-CLM-ADJ-PROV-ADJ-AMT PIC 9(07)V99.                          
+006100     05  MEDG-CLM-DATE-PAID        PIC X(08).                             
+006200     05  MEDG-CLM-DATE-FROM        PIC X(08).                             
+006300     05  MEDG-CLM-DATE-TO          PIC X(08).                             
+006400     05  MEDG-CLM-ADMIT-DATE-FROM  PIC X(08).                             
+006500     05  MEDG-CLM-ADMIT-DATE-TO    PIC X(08).                             
+006600     05  MEDG-CLM-TOT-INPAT-DAYS   PIC 9(04).                             
+006700     05  MEDG-CLM-NOT-COVRD-DAYS   PIC 9(04).                             
+006800     05  MEDG-CLM-COINS-DAYS       PIC 9(04).                             
+006900     05  MEDG-CLM-LTR-DAYS         PIC 9(04).                             
+007000     05  MEDG-CLM-APPL-AMT         PIC 9(07)V99.                          
+007100     05  MEDG-CLM-LTR-AMT          PIC 9(07)V99.                          
+007200     05  MEDG-CLM-BLOOD-USED       PIC 9(04).                             
+007300     05  MEDG-CLM-BLOOD-REPLACED   PIC 9(04).                             
+007400     05  MEDG-CLM-BLOOD-UNITS      PIC 9(04).                             
+007500     05  MEDG-CLM-BLOOD-DED        PIC 9(07)V99.                          
+007600     05  MEDG-CLM-FACILITY-NAME    PIC X(25).                             
+007700     05  MEDG-CLM-AMOUNT-PAID      PIC 9(07)V99.                          
+007800     05  MEDG-CLM-NOT-COVRD-AMT    PIC 9(07)V99.                          
+007810     05  MEDG-CLM-APPROVED-AMT     PIC 9(07)V99.                          
+007820     05  MEDG-CLM-COINSURANCE-AMT  PIC 9(07)V99.                          
+007830     05  MEDG-CLM-DEDUCTIBLE-AMT   PIC 9(07)V99.                          
+008600     05  MEDG-CLM-VA-NOT-COVRD-AMT PIC 9(07)V99.                          
+007900     05  MEDG-CLM-INDEX-NBR        PIC X(14).                             
+008100     05  MEDG-CLM-VA-IND           PIC X(01).                             
+008100     05  MEDG-CLM-CHIRO-CODE       PIC X(01).                             
+008900     05  MEDG-CLM-TOT-SERV-LINES   PIC 9(05).                             
+008000     05  MEDG-CLM-MIA-OCCURS OCCURS 5 TIMES.                              
+008100         10  MEDG-CLM-MIA-DRG-APPL PIC 9(07)V99.                          
+008200         10  MEDG-CLM-MIA-REMARK1  PIC X(10).                             
+008300         10  MEDG-CLM-MIA-REMARK2  PIC X(10).                             
+008400         10  MEDG-CLM-MIA-REMARK3  PIC X(10).                             
+008500         10  MEDG-CLM-MIA-REMARK4  PIC X(10).                             
+008600         10  MEDG-CLM-MIA-REMARK5  PIC X(10).                             
+008700     05  MEDG-CLM-MOA-OCCURS OCCURS 5 TIMES.                              
+008900         10  MEDG-CLM-MOA-REMARK1  PIC X(10).                             
+009000         10  MEDG-CLM-MOA-REMARK2  PIC X(10).                             
+009100         10  MEDG-CLM-MOA-REMARK3  PIC X(10).                             
+009200         10  MEDG-CLM-MOA-REMARK4  PIC X(10).                             
+009300         10  MEDG-CLM-MOA-REMARK5  PIC X(10).                             
+009400     05  MEDG-CLM-CAS-OCCURS OCCURS 10 TIMES.                             
+009500         10  MEDG-CLM-CAS-GROUP-CD PIC X(02).                             
+009600         10  MEDG-CLM-CAS-REASN-CD PIC X(05).                             
+009700         10  MEDG-CLM-CAS-AMOUNT   PIC 9(07)V99.                          
+010800         10  MEDG-CLM-CAS-QUANTITY PIC 9(15).                             
+136028     05  MEDG-CLM-BEG-LTR-AMT      PIC 9(07)V99.                          
+136028     05  MEDG-CLM-BEG-LTR-DAYS     PIC 9(03).                             
+136028     05  MEDG-CLM-END-LTR-AMT      PIC 9(07)V99.                          
+136028     05  MEDG-CLM-END-LTR-DAYS     PIC 9(03).                             
+136028     05  MEDG-CLM-BEG-COINS-AMT    PIC 9(07)V99.                          
+136028     05  MEDG-CLM-BEG-COINS-DAYS   PIC 9(03).                             
+136028     05  MEDG-CLM-END-COINS-AMT    PIC 9(07)V99.                          
+136028     05  MEDG-CLM-END-COINS-DAYS   PIC 9(03).                             
+

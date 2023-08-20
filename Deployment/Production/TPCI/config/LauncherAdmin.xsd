@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  IBM Confidential
+  OCO Source Material
+  (c) Copyright IBM Corp. 2011
+
+  All rights reserved. You may not use, copy, modify or transfer this
+  program or any copy, modification or portion, in whole or in part,
+  without the explicit written permission of IBM Corporation.
+ -->
+<xsd:schema
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:wtx="http://www.ibm.com/websphere/dtx/launcher/model"
+    targetNamespace="http://www.ibm.com/websphere/dtx/launcher/model">
+
+  <!-- EventServerAdminInfo -->
+  <xsd:complexType name="AccessInfo">
+    <xsd:sequence>
+      <xsd:element name="AccessRights" type="xsd:unsignedShort"/>
+      <xsd:element name="SystemName" type="xsd:string" default="All Systems"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="UserInfo">
+    <xsd:sequence minOccurs="0">
+      <xsd:element name="UserName" type="xsd:string"/>
+      <xsd:element name="LoginName" type="xsd:string"/>
+      <xsd:element name="Password" type="xsd:string"/>
+      <xsd:element name="AccessInfoList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="AccessInfo" type="wtx:AccessInfo" minOccurs="1" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="AccessAll" type="xsd:boolean" default="true"/>
+  </xsd:complexType>
+  <xsd:complexType name="EventServerAdminInfo">
+    <xsd:sequence>
+      <xsd:element name="ListeningPort" type="xsd:unsignedShort" default="5015"/>
+      <xsd:element name="StartPort" type="xsd:unsignedShort" default="7000"/>
+      <xsd:element name="EndPort" type="xsd:unsignedShort" default="8000"/>
+      <xsd:element name="AutomaticInitialStart" type="xsd:boolean" default="true"/>
+      <xsd:element name="ProcessPerSystem" type="xsd:boolean" default="false"/>
+      <xsd:element name="AutomaticSystemDetection" type="xsd:boolean" default="false"/>
+      <xsd:element name="Users" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="User" type="wtx:UserInfo" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeploymentDirectories" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Directory" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AutomaticStartSystems" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="System" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConfigurationFile" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- EventServerAdvancedAdminInfo -->
+  <xsd:complexType name="SystemPropertyInfo">
+    <xsd:sequence>
+      <xsd:element name="Name" type="xsd:string"/>
+      <xsd:element name="Value" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="EventServerAdvancedAdminInfo">
+    <xsd:complexContent>
+      <xsd:extension base="wtx:EventServerAdminInfo">
+        <xsd:sequence>
+          <xsd:element name="SystemProperties" minOccurs="0">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="SystemProperty" type="wtx:SystemPropertyInfo" minOccurs="0" maxOccurs="unbounded"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <!-- EventServerBaseAdminInfo -->
+  <xsd:complexType name="FirewallInfo">
+    <xsd:sequence>
+      <xsd:element name="ServerPort" type="xsd:unsignedShort" default="4634"/>
+      <xsd:element name="ClientPort" type="xsd:unsignedShort" default="4635"/>
+    </xsd:sequence>
+    <xsd:attribute name="Enabled" type="xsd:boolean" default="false"/>
+  </xsd:complexType>
+  <xsd:complexType name="EventServerBaseAdminInfo">
+    <xsd:complexContent>
+      <xsd:extension base="wtx:EventServerAdvancedAdminInfo">
+        <xsd:sequence>
+          <xsd:element name="FirewallInfo" type="wtx:FirewallInfo" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <!-- EventServerBaseAdmin841Info -->
+  <xsd:complexType name="RestartInfo">
+    <xsd:sequence>
+      <xsd:element name="RetryAttempts" type="xsd:unsignedShort" default="2"/>
+      <xsd:element name="RetryTimeout" type="xsd:unsignedShort" default="10"/>
+    </xsd:sequence>
+    <xsd:attribute name="Enabled" type="xsd:boolean" default="true"/>
+  </xsd:complexType>
+  <xsd:complexType name="EventServerBaseAdmin841Info">
+    <xsd:complexContent>
+      <xsd:extension base="wtx:EventServerBaseAdminInfo">
+        <xsd:sequence>
+          <xsd:element name="RestartInfo" type="wtx:RestartInfo" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <!-- EventServerAdmin90Info -->
+  <xsd:complexType name="ListenerInfo">
+    <xsd:sequence>
+      <xsd:element name="Name" type="xsd:string"/>
+      <xsd:element name="Mode" type="xsd:string"/>
+      <xsd:element name="HTTPPort" type="xsd:string"/>
+      <xsd:element name="LauncherPort" type="xsd:string"/>
+      <xsd:element name="HTTPCertificate" type="xsd:string"/>
+      <xsd:element name="LauncherCertificate" type="xsd:string"/>
+      <xsd:element name="LogLevel" type="xsd:string"/>
+      <xsd:element name="Audit" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="EventServerAdmin90Info">
+    <xsd:complexContent>
+      <xsd:extension base="wtx:EventServerBaseAdmin841Info">
+        <xsd:sequence>
+          <xsd:element name="Listeners" minOccurs="0">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="ListenerInfo" type="wtx:ListenerInfo" minOccurs="0" maxOccurs="unbounded"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <!-- EventServerAdmin -->
+  <xsd:complexType name="FileProperty">
+    <xsd:sequence>
+      <xsd:element name="Name" type="xsd:string"/>
+      <xsd:element name="LongName" type="xsd:string"/>
+      <xsd:element name="Description" type="xsd:string"/>
+      <xsd:element name="ResourceManagerType" type="xsd:string"/>
+      <xsd:element name="ResourceConfigFile" type="xsd:string"/>
+      <xsd:element name="InitializationFile" type="xsd:string"/>
+      <xsd:element name="Files" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="File" type="xsd:string" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="AutomaticStartUp" default="No">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Yes"/>
+          <xsd:enumeration value="No"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="DirectoryProperty">
+    <xsd:sequence>
+      <xsd:element name="Name" type="xsd:string"/>
+      <xsd:element name="ResourceManagerType" type="xsd:string"/>
+      <xsd:element name="ResourceConfigFile" type="xsd:string"/>
+      <xsd:element name="InitializationFile" type="xsd:string"/>
+      <xsd:element name="FileProperties" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="FileProperty" type="wtx:FileProperty" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Directory" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="EventServerAdmin">
+    <xsd:complexContent>
+      <xsd:extension base="wtx:EventServerAdmin90Info">
+        <xsd:sequence>
+          <xsd:element name="InitializationFile" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="DirectoryProperties" minOccurs="0">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="DirectoryProperty" type="wtx:DirectoryProperty" minOccurs="0" maxOccurs="unbounded"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="Version" type="xsd:string" default="1.0"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <!-- eventServerAdmin -->
+  <xsd:element name="EventServerAdmin" type="wtx:EventServerAdmin"/>
+</xsd:schema>

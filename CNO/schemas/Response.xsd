@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * Copyright (C) 2004, 2014 IBM Corporation.  All rights reserved.
+ *
+ * This software is the property of IBM Corporation and its
+ * licensors and contains their confidential trade secrets.  Use, examination,
+ * copying, transfer and disclosure to others, in whole or in part, are
+ * prohibited except with the express prior written consent of
+ * IBM Corporation.
+ *
+ *-->
+
+<!-- 
+ * Do not modify the content of this file. This XML Schema document can be used 
+ * in mapping Response information from Standards Processing Engine for the
+ * TRANSFORM (TFM), DEENVELOPE (DENV), and ENVELOPE (ENV) actions executed by
+ * the Standards Processing Engine Adapter.
+ * 
+ *-->
+     
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="www.ibm.com/websphere/dtx/m4spe" xmlns:spe="www.ibm.com/websphere/dtx/m4spe">
+
+  <xsd:element name="Response" type="spe:ResponseType"/>
+  
+	<xsd:complexType name="ResponseType">
+    <xsd:sequence>
+      <xsd:element name="Status" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="AdvancedStatus" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Severity" minOccurs="0" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:enumeration value="0"/>
+            <xsd:enumeration value="4"/>
+            <xsd:enumeration value="8"/>
+            <xsd:enumeration value="12"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="Reason" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Report" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ProcessParameters" minOccurs="0" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ProcessParameter" type="spe:ProcessParameterType" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Documents" minOccurs="0" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Document" type="spe:DocumentType" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Correlations" minOccurs="0" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Correlation" type="spe:CorrelationType" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TransformCorrelations" minOccurs="0" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="TransformCorrelation" type="spe:CorrelationType" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Addendum" type ="spe:AddendumType" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence> 
+    <xsd:attribute name="Version" type="xsd:int" use="required"/>    
+  </xsd:complexType>
+
+  <xsd:complexType name="ProcessParameterType">
+    <xsd:sequence>
+      <xsd:element name="Key" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Value" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="DocumentType">
+    <xsd:sequence>
+      <xsd:element name="ID" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Name" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Type" minOccurs="0" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="INTERMEDIATE"/>
+            <xsd:enumeration value="INPUT"/>
+            <xsd:enumeration value="FINAL"/>
+            <xsd:enumeration value="UNASSIGNED"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="Acks" minOccurs="0" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="NONE"/>
+            <xsd:enumeration value="MIXED"/>
+            <xsd:enumeration value="ALL"/>
+            <xsd:enumeration value="UNKNOWN"/>            
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="CorrelationType">
+		<xsd:sequence>
+			<xsd:element name="Key" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ID" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Value" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Type" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+  <xsd:complexType name="AddendumType">
+    <xsd:sequence>
+      <xsd:element name="Entries" minOccurs="0" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Entry" type="spe:EntryType" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Groups" minOccurs="0" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Group" type="spe:GroupType" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="EntryType">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="Key" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="GroupType">
+    <xsd:sequence>
+      <xsd:element name="Member" type="spe:MemberType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="Name" type="xsd:string" use="required"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MemberType">
+    <xsd:sequence>
+      <xsd:element name="Entry" type="spe:EntryType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

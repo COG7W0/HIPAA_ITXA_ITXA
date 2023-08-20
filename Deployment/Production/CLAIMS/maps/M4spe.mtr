@@ -1,0 +1,43 @@
+<600-273209088-Mon Mar 21 18:19:48 2022>:	 ACTION          | -DEENVELOPE
+<600-273209088-Mon Mar 21 18:19:48 2022>:	 GETDEFERRED     | false
+<600-273209088-Mon Mar 21 18:19:48 2022>:	 DEFERRED        | false
+<600-273209088-Mon Mar 21 18:19:48 2022>:	 NOW             | false
+<600-273209088-Mon Mar 21 18:19:48 2022>:	 KEEP            | false
+<600-273209088-Mon Mar 21 18:19:48 2022>:	 ALLDOCS         | true
+<600-273209088-Mon Mar 21 18:19:48 2022>:	 Trace file      | M4spe.mtr
+<600-273209088-Mon Mar 21 18:19:48 2022>:	 Trace append    | false
+<600-273209088-Mon Mar 21 18:19:48 2022>:	 Trace error     | false
+<600-273209088-Mon Mar 21 18:19:48 2022>:	 Trace verbose   | false
+<600-273209088-Mon Mar 21 18:19:48 2022>:	 SPEOPTION       | DriverTrackingID=I_SSIG_20220321181946277507
+<600-273209088-Mon Mar 21 18:19:48 2022>:	 SPEOPTION       | StandardTypes=X12
+<600-3457847680-Mon Mar 21 18:19:48 2022>:	[beginTransaction]
+<600-3457847680-Mon Mar 21 18:19:49 2022>:	|	Exception caught  : class java.lang.Exception
+<600-3457847680-Mon Mar 21 18:19:49 2022>:	|	Localized Message : java.lang.NoClassDefFoundError: org.apache.log4j.helpers.LogLog
+<600-3457847680-Mon Mar 21 18:19:49 2022>:	|	Message           : java.lang.NoClassDefFoundError: org.apache.log4j.helpers.LogLog
+<600-3457847680-Mon Mar 21 18:19:49 2022>:	|	Stack trace       : 
+<600-3457847680-Mon Mar 21 18:19:49 2022>:	|	java.lang.Exception: java.lang.NoClassDefFoundError: org.apache.log4j.helpers.LogLog
+	at com.ibm.websphere.dtx.m4spe.common.M4SpeRunner.getSPERunner(M4SpeRunner.java:130)
+	at com.ibm.websphere.dtx.m4spe.MAdapterImpl.beginTransaction(MAdapterImpl.java:555)
+Caused by: java.lang.NoClassDefFoundError: org.apache.log4j.helpers.LogLog
+	at com.ibm.spe.core.log.LogService.findRealPID(LogService.java:832)
+	at com.ibm.spe.core.log.LogService.getPID(LogService.java:803)
+	at com.ibm.spe.core.log.LogService.initializeLoggers(LogService.java:85)
+	at com.ibm.spe.core.log.LogService.<clinit>(LogService.java:76)
+	at com.ibm.spe.core.utils.Manager.loadPropertyFiles(Manager.java:430)
+	at com.ibm.spe.core.utils.Manager.doStaticInit(Manager.java:306)
+	at com.ibm.spe.core.utils.Manager.initialize(Manager.java:285)
+	at com.ibm.spe.core.systeminterface.SPE.registerProviderGroup(SPE.java:663)
+	at com.ibm.spe.core.systeminterface.SPE.registerDefaultPersistenceProviders(SPE.java:518)
+	at com.ibm.websphere.dtx.m4spe.common.M4SpeRegistry.registerProviders(M4SpeRegistry.java:73)
+	at com.ibm.websphere.dtx.m4spe.common.M4SpeRunner.registerProviders(M4SpeRunner.java:182)
+	at com.ibm.websphere.dtx.m4spe.common.M4SpeRunner.getSPERunner(M4SpeRunner.java:110)
+	... 1 more
+Caused by: java.lang.ClassNotFoundException: org.apache.log4j.helpers.LogLog
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:610)
+	at java.lang.ClassLoader.loadClassHelper(ClassLoader.java:945)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:890)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:873)
+	... 13 more
+
+<600-3457847680-Mon Mar 21 18:19:49 2022>:	|	Error code: -2 , Error message: java.lang.NoClassDefFoundError: org.apache.log4j.helpers.LogLog

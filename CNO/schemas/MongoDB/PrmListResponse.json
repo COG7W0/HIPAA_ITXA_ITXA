@@ -1,0 +1,17 @@
+[
+  {
+    "key":"x12_835_tech_contact_name",
+    "value":"HIPAA EDI TEAM",
+    "description":"Contact name to be mapped on to X12 835"
+  },
+  {
+    "key":"x12_835_tech_contact_email",
+    "value":"EDI_SUPPORT@CONSECO.COM",
+    "description":"Contact email"
+  },
+  {
+    "key":"x12_835eft_stcnt",
+    "value":54730,
+    "description":"X12 835 ST02 sequence number mapping"
+  }
+]

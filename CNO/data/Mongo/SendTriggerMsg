@@ -1,0 +1,70 @@
+<MapAudit StartTime="13:45:48 December 16, 2019">
+
+<Platform> RUN Function for Windows - Version 9.0.0(65)</Platform>
+
+<Burst count="1">
+
+<DataLog></DataLog>
+
+</Burst>
+
+<ExecutionSummary MapStatus="Valid" mapreturn="0" ElapsedSec="0.0079" BurstRestartCount="0">
+   <Message>Map completed successfully</Message>
+   <CommandLine>'D:\ANKAMMA\ITX_WORKSPACE_PROD\CNO_PCR7\Maps\CNO_ITXA_SEND_MQ.mmc' -IE1S4 %lt;data;%gt; -IE2S2369 %lt;data;%gt; -IE3S4 %lt;data;%gt; -IE4S96 %lt;data;%gt; -AEDM=../logs/</CommandLine>
+   <ObjectsFound>99</ObjectsFound>
+   <ObjectsBuilt>146</ObjectsBuilt>
+
+<SourceReport   card="1"   adapter="Echo"   bytes="4"   adapterreturn="0">
+   <Message>Data retrieved successfully</Message>
+   <TimeStamp>13:45:48 December 16, 2019</TimeStamp>
+</SourceReport>
+
+<SourceReport   card="2"   adapter="Echo"   bytes="2369"   adapterreturn="0">
+   <Message>Data retrieved successfully</Message>
+   <TimeStamp>13:45:48 December 16, 2019</TimeStamp>
+</SourceReport>
+
+<SourceReport   card="3"   adapter="Echo"   bytes="4"   adapterreturn="0">
+   <Message>Data retrieved successfully</Message>
+   <TimeStamp>13:45:48 December 16, 2019</TimeStamp>
+</SourceReport>
+
+<SourceReport   card="4"   adapter="Echo"   bytes="96"   adapterreturn="0">
+   <Message>Data retrieved successfully</Message>
+   <TimeStamp>13:45:48 December 16, 2019</TimeStamp>
+</SourceReport>
+
+<TargetReport   card="1"   adapter="Sink"   bytes="2412"   adapterreturn="0">
+   <Message>Success</Message>
+   <TimeStamp>13:45:48 December 16, 2019</TimeStamp>
+</TargetReport>
+
+<TargetReport   card="2"   adapter="Sink"   bytes="400"   adapterreturn="0">
+   <Message>Success</Message>
+   <TimeStamp>13:45:48 December 16, 2019</TimeStamp>
+</TargetReport>
+
+<TargetReport   card="3"   adapter="Sink"   bytes="2780"   adapterreturn="0">
+   <Message>Success</Message>
+   <TimeStamp>13:45:48 December 16, 2019</TimeStamp>
+</TargetReport>
+
+<TargetReport   card="4"   adapter="Sink"   bytes="15"   adapterreturn="0">
+   <Message>Success</Message>
+   <TimeStamp>13:45:48 December 16, 2019</TimeStamp>
+</TargetReport>
+
+<WorkArea type="Memory">
+<inputarea  card="1"   bytes="66816"/>
+<inputarea  card="2"   bytes="66816"/>
+<inputarea  card="3"   bytes="66816"/>
+<inputarea  card="4"   bytes="66816"/>
+<outputarea card="1"   bytes="66816"/>
+<outputarea card="2"   bytes="66816"/>
+<outputarea card="3"   bytes="66816"/>
+</WorkArea>
+
+</ExecutionSummary>
+
+</MapAudit>
+|0||Valid|Map completed successfully

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MDQ>
+	<VERSION>008</VERSION>
+	<DATABASE name="ITXAEDI">
+		<TYPE>ODBC</TYPE>
+		<PLATFORM>LINUX</PLATFORM>
+		<QUALIFIEDNAMES>false</QUALIFIEDNAMES>
+		<SURROUNDCHARS></SURROUNDCHARS>
+		<EXECUTIONSOURCE>ITXAEDI</EXECUTIONSOURCE>
+		<USER>itxadb</USER>
+		<PASSWORD.encrypted>$A}3f~)zM/</PASSWORD.encrypted>
+		<QUERY name="X12_Pre_Edits">
+			<SQLStmt>SELECT 
+[pre_edit_key],
+[part],
+[cobc_dispute],
+[reporting_key],
+[reporting_text] FROM [ITXAEDI].[dbo].[X12_Pre_Edits] ORDER BY pre_edit_key, part;</SQLStmt>
+			<TABLELIST>.X12_Pre_Edits</TABLELIST>
+		</QUERY>
+		<QUERY name="x12_Film_Counter">
+			<SQLStmt>SELECT [Parameter_Value_Int] FROM [ITXAEDI].[dbo].[EDI_Control_Parameters] WHERE [Parameter_Name]= 'x12_Film_Counter';</SQLStmt>
+		</QUERY>
+		<QUERY name="X12_Transaction">
+			<SQLStmt>SELECT [ISA06],[GS08],[X12_Version],[X12_Transaction],[Part], [cobc_tp],[Pre_Edits_Needed] FROM [ITXAEDI].[dbo].[X12_Transaction] ;</SQLStmt>
+		</QUERY>
+	</DATABASE>
+	<DATABASE name="GTM">
+		<TYPE>ODBC</TYPE>
+		<PLATFORM>LINUX</PLATFORM>
+		<QUALIFIEDNAMES>false</QUALIFIEDNAMES>
+		<SURROUNDCHARS></SURROUNDCHARS>
+		<EXECUTIONSOURCE>GTM</EXECUTIONSOURCE>
+		<USER>gtmdb</USER>
+		<PASSWORD.encrypted>$A)}`}z)K3</PASSWORD.encrypted>
+		<QUERY name="PRMLIST">
+			<SQLStmt>SELECT [MstCompanyId]
+      ,[ListType]
+      ,[ListCode]
+      ,[ListDesc]
+      ,[ListInfo]
+  FROM [GTM].[dbo].[PrmList] where ListType='SPESubmitter';</SQLStmt>
+			<TABLELIST>.PrmList</TABLELIST>
+			<TYPETREE>
+				<TREE>D:\\ANKAMMA\\ITX_WORKSPACE\\CNO\\config\\PRMLIST.mtt</TREE>
+				<DATE>Wed Dec 20 05:14:48 2017</DATE>
+			</TYPETREE>
+		</QUERY>
+		<QUERY name="x12_Film_Counter">
+			<SQLStmt>SELECT [Parameter_Value_Int] FROM [GTM].[dbo].[EDI_Control_Parameters] WHERE [Parameter_Name]= 'x12_Film_Counter';</SQLStmt>
+		</QUERY>
+		<QUERY name="X12_Pre_Edits">
+			<SQLStmt>SELECT 
+[pre_edit_key],
+[part],
+[cobc_dispute],
+[reporting_key],
+[reporting_text] FROM [GTM].[dbo].[X12_Pre_Edits] ORDER BY pre_edit_key, part;</SQLStmt>
+		</QUERY>
+		<QUERY name="X12_Transaction">
+			<SQLStmt>SELECT [ISA06],[GS08],[X12_Version],[X12_Transaction],[Part], [cobc_tp],[Pre_Edits_Needed] FROM [GTM].[dbo].[X12_Transaction] ;</SQLStmt>
+		</QUERY>
+	</DATABASE>
+</MDQ>

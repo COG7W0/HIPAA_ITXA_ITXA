@@ -1,0 +1,24 @@
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="X12_835_EFT_TP_Totals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="X12_835_EFT_TP_Total" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="eft_key"/>
+              <xs:element type="xs:string" name="parent_company"/>
+              <xs:element type="xs:string" name="company_id"/>
+              <xs:element type="xs:string" name="business_id"/>
+              <xs:element type="xs:string" name="tp_name"/>
+              <xs:element type="xs:int" name="tran_cnt_paid"/>
+              <xs:element type="xs:int" name="tran_cnt_nonpaid"/>
+              <xs:element type="xs:float" name="tran_amt_paid"/>
+              <xs:element type="xs:string" name="date_added"/>
+              <xs:element type="xs:string" name="time_added"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,17 @@
+{"request":{
+	"filter":"",
+	"sort":"",
+	"project":""
+},
+"response":{
+	"status": {
+		"returnCode": 0,
+		"errors":"",
+"summary":
+{
+	"noRead": 100
+},
+"detail":""
+}
+}
+}
